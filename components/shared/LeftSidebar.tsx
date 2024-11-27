@@ -25,7 +25,7 @@ const LeftSidebar = () => {
             return (
               <Link href={link.route} key={index} className={`leftsidebar_link ${isActive && 'text-primary-500'}`}>
                 <Image
-                  src={isActive ? link.activeIcon : link.icon}
+                  src={`/assets/${isActive ? link.activeIcon : link.icon}`}
                   alt={link.label}
                   width={24}
                   height={24}

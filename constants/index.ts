@@ -23,38 +23,38 @@ export interface VaccineProps {
 export const sidebarLinks = [
     {
         'route': '/',
-        'icon': '/assets/dashboard.svg',
-        'activeIcon': '/assets/dashboard2.svg',
+        'icon': 'dashboard.svg',
+        'activeIcon': 'dashboard2.svg',
         'label': 'Dashboard'
     },
     {
         'route': '/appointments',
-        'icon': '/assets/appoint.svg',
-        'activeIcon': '/assets/appoint2.svg',
+        'icon': 'appoint.svg',
+        'activeIcon': 'appoint2.svg',
         'label': 'Appointments'
     },
     {
         'route': '/pharmacy',
-        'icon': '/assets/Pharmacy.svg',
-        'activeIcon': '/assets/Pharmacy2.svg',
+        'icon': 'Pharmacy.svg',
+        'activeIcon': 'Pharmacy2.svg',
         'label': 'Pharmacy'
     },
     {
         'route': '/activity',
-        'icon': '/assets/Activity.svg',
-        'activeIcon': '/assets/Activity2.svg',
+        'icon': 'Activity.svg',
+        'activeIcon': 'Activity2.svg',
         'label': 'Activity'
     },
     {
         'route': '/report',
-        'icon': '/assets/Report.svg',
-        'activeIcon': '/assets/Report2.svg',
+        'icon': 'Report.svg',
+        'activeIcon': 'Report2.svg',
         'label': 'Report'
     },
     {
         'route': '/settings',
-        'icon': '/assets/Settings.svg',
-        'activeIcon': '/assets/Settings2.svg',
+        'icon': 'Settings.svg',
+        'activeIcon': 'Settings2.svg',
         'label': 'Settings'
     },
 ]
