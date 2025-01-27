@@ -21,19 +21,15 @@ export default function RootLayout({
             <html lang="en">
                 <body className={inter.className}>
                     <Navbar />
-
                     <main className="flex flex-row bg-slate-100">
                         <LeftSidebar />
-
                         <section className="main-container">
                             <div className="w-full max-w-4xl">
                                 {children}
                             </div>
                         </section>
-
                         <RightSidebar />
                     </main>
-
                     <Footer />
                 </body>
             </html>

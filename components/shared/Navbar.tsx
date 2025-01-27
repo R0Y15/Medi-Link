@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -18,6 +19,14 @@ const Navbar = () => {
       </Link>
 
       <div className="flex items-center gap-1">
+        <UserButton 
+          afterSignOutUrl="/"
+          appearance={{
+            elements: {
+              avatarBox: "h-10 w-10"
+            }
+          }}
+        />
 
         <div className="md:block hidden">
           <div className="relative w-5 h-5">
