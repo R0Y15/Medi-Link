@@ -21,7 +21,7 @@ export default function RootLayout({
             <html lang="en">
                 <body className={inter.className}>
                     <Navbar />
-                    <main className="flex flex-row bg-slate-100">
+                    <main className="flex flex-row bg-[hsl(var(--background-darker))]">
                         <LeftSidebar />
                         <section className="main-container flex-1">
                             <div className="w-full">

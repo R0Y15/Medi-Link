@@ -11,7 +11,7 @@ const VaccineCards = ({ title, date }: VaccineProps) => {
       <div className="flex py-2 w-full">
         <div className='flex flex-row justify-between items-center w-full'>
           <div className="flex gap-4 justify-center items-center">
-            <div className="flex w-10 h-10 justify-center items-center rounded-full bg-slate-100">
+            <div className="flex w-10 h-10 justify-center items-center rounded-full bg-muted">
               <Image
                 src={'/assets/syringe.svg'}
                 width={25}
@@ -21,8 +21,8 @@ const VaccineCards = ({ title, date }: VaccineProps) => {
             </div>
 
             <div className="flex flex-col">
-              <h2 className='text-base-semibold'>{title}</h2>
-              <p className='text-gray-500 text-small-regular'>{date}</p>
+              <h2 className='text-base-semibold text-foreground'>{title}</h2>
+              <p className='text-muted-foreground text-small-regular'>{date}</p>
             </div>
           </div>
 

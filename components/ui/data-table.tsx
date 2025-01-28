@@ -97,58 +97,58 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="w-full bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+    <div className="w-full bg-card rounded-2xl p-6 border shadow-sm">
       {/* Header Section */}
-      <div className="flex justify-between items-center pb-4 border-b border-gray-100 mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">Pharmacy Management</h2>
+      <div className="flex justify-between items-center pb-4 border-b mb-6">
+        <h2 className="text-2xl font-bold text-foreground">Pharmacy Management</h2>
         <AddMedicineDialog onSuccess={onRefresh} />
       </div>
 
       {/* Controls & Table */}
       <div className="space-y-6">
         <div className="flex items-center gap-4">
-              <Input
-                placeholder="Filter medicines..."
-                value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-                onChange={(event) =>
-                  table.getColumn("name")?.setFilterValue(event.target.value)
-                }
-                className="max-w-xs"
-              />
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+          <Input
+            placeholder="Filter medicines..."
+            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("name")?.setFilterValue(event.target.value)
+            }
+            className="max-w-xs"
+          />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm" className="ml-auto">
-                    View
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="bg-white">
-                  {table
-                    .getAllColumns()
-                    .filter((column) => column.getCanHide())
-                    .map((column) => (
-                      <DropdownMenuCheckboxItem
-                        key={column.id}
-                        className="capitalize"
-                        checked={column.getIsVisible()}
-                        onCheckedChange={(value) => column.toggleVisibility(!!value)}
-                      >
-                        {column.id}
-                      </DropdownMenuCheckboxItem>
-                    ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+                View
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {table
+                .getAllColumns()
+                .filter((column) => column.getCanHide())
+                .map((column) => (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    className="capitalize"
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
 
         {/* Table Container */}
-        <div className="rounded-xl overflow-hidden border border-gray-100">
+        <div className="rounded-xl overflow-hidden border">
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow key={headerGroup.id} className="bg-gray-50 hover:bg-gray-50">
+                <TableRow key={headerGroup.id} className="hover:bg-muted">
                   {headerGroup.headers.map((header) => (
                     <TableHead 
                       key={header.id}
-                      className="text-gray-600 font-medium py-4"
+                      className="text-muted-foreground font-medium py-4"
                     >
                       {!header.isPlaceholder &&
                         flexRender(
@@ -166,7 +166,7 @@ export function DataTable<TData, TValue>({
                   <TableRow
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
-                    className="hover:bg-gray-50 border-t border-gray-100"
+                    className="hover:bg-muted border-t"
                   >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell key={cell.id} className="py-4">
@@ -179,7 +179,7 @@ export function DataTable<TData, TValue>({
                 <TableRow>
                   <TableCell 
                     colSpan={columns.length} 
-                    className="h-24 text-center text-gray-500"
+                    className="h-24 text-center text-muted-foreground"
                   >
                     No results found.
                   </TableCell>
@@ -192,13 +192,13 @@ export function DataTable<TData, TValue>({
         {/* Pagination */}
         <div className="flex items-center justify-end space-x-4 py-2">
           <div className="flex items-center space-x-2">
-            <p className="text-sm text-gray-700">Rows per page</p>
+            <p className="text-sm text-muted-foreground">Rows per page</p>
             <select
               value={table.getState().pagination.pageSize}
               onChange={e => {
                 table.setPageSize(Number(e.target.value))
               }}
-              className="h-8 w-[70px] rounded-md border border-gray-200 bg-white px-2 text-sm"
+              className="h-8 w-[70px] rounded-md border bg-card px-2 text-sm"
               aria-label="Select number of rows per page"
             >
               {[10, 25, 50, 100].map(pageSize => (

@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 class Grad {
   constructor(x, y, z) {
@@ -73,6 +74,7 @@ export default function Waves({
   style = {},
   className = ""
 }) {
+  const { theme } = useTheme();
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const ctxRef = useRef(null);
@@ -161,7 +163,7 @@ export default function Waves({
       const ctx = ctxRef.current;
       ctx.clearRect(0, 0, width, height);
       ctx.beginPath();
-      ctx.strokeStyle = lineColor;
+      ctx.strokeStyle = theme === 'dark' ? "hsl(0 0% 100% / 0.25)" : "hsl(0 0% 0% / 0.25)";
       linesRef.current.forEach((points) => {
         let p1 = moved(points[0], false);
         ctx.moveTo(p1.x, p1.y);
@@ -236,7 +238,7 @@ export default function Waves({
   }, [
     lineColor, backgroundColor, waveSpeedX, waveSpeedY,
     waveAmpX, waveAmpY, friction, tension, maxCursorMove,
-    xGap, yGap
+    xGap, yGap, theme
   ]);
 
   return (
