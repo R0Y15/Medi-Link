@@ -2,12 +2,9 @@
 
 import { PatientCardProps } from '@/constants';
 import Image from 'next/image'
-import { useRouter } from 'next/navigation';
 import React from 'react'
 
-const PatientCard = ({ cardTitle, cardDetail, logo, color }: PatientCardProps) => {
-  const router = useRouter();
-
+const PatientCard = ({ cardTitle, cardDetail, logo, color, onViewDetails }: PatientCardProps & { onViewDetails?: () => void }) => {
   return (
     <>
       <div className={`flex flex-col p-4 min-w-64 w-full rounded-2xl shadow-lg
@@ -33,7 +30,10 @@ const PatientCard = ({ cardTitle, cardDetail, logo, color }: PatientCardProps) =
           </div>
         </div>
 
-        <div className="flex flex-row mt-6 gap-2 justify-start items-center cursor-pointer group" onClick={() => router.push('/')}>
+        <div 
+          className="flex flex-row mt-6 gap-2 justify-start items-center cursor-pointer group" 
+          onClick={onViewDetails}
+        >
           <h1 className='text-base1-semibold text-white'>View details</h1>
           <div className="transform transition-transform group-hover:translate-x-3">
             <Image

@@ -105,3 +105,14 @@ export const vaccines = [
     { name: "Novavax", date: "2023-09-15" },
     { name: "Covovax", date: "2023-10-01" }
 ];
+
+export const API_ENDPOINTS = {
+    baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001',
+    user: '/user',
+    stats: '/stats',
+    prescriptions: '/prescriptions',
+    appointments: '/appointments',
+    vaccinations: '/vaccinations',
+    activity: '/activity',
+    settings: '/settings',
+} as const;

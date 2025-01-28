@@ -23,8 +23,8 @@ export default function RootLayout({
                     <Navbar />
                     <main className="flex flex-row bg-slate-100">
                         <LeftSidebar />
-                        <section className="main-container">
-                            <div className="w-full max-w-4xl">
+                        <section className="main-container flex-1">
+                            <div className="w-full">
                                 {children}
                             </div>
                         </section>
