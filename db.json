@@ -1,0 +1,1786 @@
+{
+  "prescriptions": [
+    {
+      "id": "2",
+      "name": "Lisinopril",
+      "stock": 50,
+      "category": "Blood Pressure",
+      "price": 15.5,
+      "expiryDate": "2024-10-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "3",
+      "name": "Metformin",
+      "stock": 0,
+      "category": "Diabetes",
+      "price": 12.99,
+      "expiryDate": "2024-11-30",
+      "status": "Out of Stock"
+    },
+    {
+      "id": "1738022492964",
+      "name": "Paracetamol",
+      "stock": 15,
+      "category": "antibiotic",
+      "price": 10,
+      "expiryDate": "2026-02-11",
+      "status": "Low Stock"
+    },
+    {
+      "id": "1738022624626",
+      "name": "gsbgkshks",
+      "stock": 2852,
+      "category": "14000",
+      "price": 14,
+      "expiryDate": "2025-01-11",
+      "status": "In Stock"
+    },
+    {
+      "id": "7",
+      "name": "Escitalopram",
+      "stock": 175,
+      "category": "Antidepressants",
+      "price": 42.99,
+      "expiryDate": "2025-08-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "8",
+      "name": "Venlafaxine",
+      "stock": 120,
+      "category": "Antidepressants",
+      "price": 38.5,
+      "expiryDate": "2025-09-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "9",
+      "name": "Duloxetine",
+      "stock": 85,
+      "category": "Antidepressants",
+      "price": 45.75,
+      "expiryDate": "2025-07-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "10",
+      "name": "Rosuvastatin",
+      "stock": 25,
+      "category": "Cardiovascular",
+      "price": 52.99,
+      "expiryDate": "2025-06-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "11",
+      "name": "Metoprolol",
+      "stock": 200,
+      "category": "Cardiovascular",
+      "price": 28.5,
+      "expiryDate": "2025-10-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "12",
+      "name": "Losartan",
+      "stock": 150,
+      "category": "Cardiovascular",
+      "price": 32.75,
+      "expiryDate": "2025-11-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "13",
+      "name": "Pantoprazole",
+      "stock": 90,
+      "category": "Gastrointestinal",
+      "price": 35.99,
+      "expiryDate": "2025-08-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "14",
+      "name": "Ranitidine",
+      "stock": 15,
+      "category": "Gastrointestinal",
+      "price": 18.5,
+      "expiryDate": "2025-05-20",
+      "status": "Low Stock"
+    },
+    {
+      "id": "15",
+      "name": "Famotidine",
+      "stock": 110,
+      "category": "Gastrointestinal",
+      "price": 22.75,
+      "expiryDate": "2025-09-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "16",
+      "name": "Montelukast",
+      "stock": 180,
+      "category": "Respiratory",
+      "price": 48.99,
+      "expiryDate": "2025-12-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "17",
+      "name": "Fluticasone",
+      "stock": 45,
+      "category": "Respiratory",
+      "price": 55.5,
+      "expiryDate": "2025-07-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "18",
+      "name": "Salbutamol",
+      "stock": 95,
+      "category": "Respiratory",
+      "price": 28.75,
+      "expiryDate": "2025-10-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "19",
+      "name": "Cetirizine",
+      "stock": 250,
+      "category": "Antihistamines",
+      "price": 15.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "20",
+      "name": "Loratadine",
+      "stock": 180,
+      "category": "Antihistamines",
+      "price": 12.5,
+      "expiryDate": "2025-08-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "21",
+      "name": "Fexofenadine",
+      "stock": 135,
+      "category": "Antihistamines",
+      "price": 18.99,
+      "expiryDate": "2025-09-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "22",
+      "name": "Gabapentin",
+      "stock": 75,
+      "category": "Neurology",
+      "price": 65.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "23",
+      "name": "Pregabalin",
+      "stock": 20,
+      "category": "Neurology",
+      "price": 72.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "24",
+      "name": "Topiramate",
+      "stock": 95,
+      "category": "Neurology",
+      "price": 58.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "25",
+      "name": "Methotrexate",
+      "stock": 45,
+      "category": "Rheumatology",
+      "price": 85.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "26",
+      "name": "Sulfasalazine",
+      "stock": 110,
+      "category": "Rheumatology",
+      "price": 42.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "27",
+      "name": "Hydroxychloroquine",
+      "stock": 160,
+      "category": "Rheumatology",
+      "price": 38.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "28",
+      "name": "Tamsulosin",
+      "stock": 85,
+      "category": "Urology",
+      "price": 45.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "29",
+      "name": "Finasteride",
+      "stock": 25,
+      "category": "Urology",
+      "price": 52.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "30",
+      "name": "Solifenacin",
+      "stock": 70,
+      "category": "Urology",
+      "price": 68.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "31",
+      "name": "Latanoprost",
+      "stock": 40,
+      "category": "Ophthalmology",
+      "price": 42.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "32",
+      "name": "Timolol",
+      "stock": 95,
+      "category": "Ophthalmology",
+      "price": 35.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "33",
+      "name": "Brimonidine",
+      "stock": 120,
+      "category": "Ophthalmology",
+      "price": 48.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "34",
+      "name": "Fluconazole",
+      "stock": 150,
+      "category": "Antifungal",
+      "price": 32.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "35",
+      "name": "Terbinafine",
+      "stock": 30,
+      "category": "Antifungal",
+      "price": 28.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "36",
+      "name": "Itraconazole",
+      "stock": 85,
+      "category": "Antifungal",
+      "price": 45.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "37",
+      "name": "Insulin Glargine",
+      "stock": 200,
+      "category": "Diabetes",
+      "price": 125.5,
+      "expiryDate": "2025-06-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "38",
+      "name": "Insulin Lispro",
+      "stock": 150,
+      "category": "Diabetes",
+      "price": 118.75,
+      "expiryDate": "2025-08-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "39",
+      "name": "Sitagliptin",
+      "stock": 25,
+      "category": "Diabetes",
+      "price": 95.99,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "40",
+      "name": "Levonorgestrel",
+      "stock": 180,
+      "category": "Hormonal",
+      "price": 38.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "41",
+      "name": "Estradiol",
+      "stock": 120,
+      "category": "Hormonal",
+      "price": 42.75,
+      "expiryDate": "2025-07-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "42",
+      "name": "Testosterone",
+      "stock": 15,
+      "category": "Hormonal",
+      "price": 88.99,
+      "expiryDate": "2025-11-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "43",
+      "name": "Methylprednisolone",
+      "stock": 95,
+      "category": "Corticosteroids",
+      "price": 35.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "44",
+      "name": "Prednisone",
+      "stock": 160,
+      "category": "Corticosteroids",
+      "price": 28.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "45",
+      "name": "Dexamethasone",
+      "stock": 30,
+      "category": "Corticosteroids",
+      "price": 42.99,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "46",
+      "name": "Morphine",
+      "stock": 75,
+      "category": "Pain Management",
+      "price": 125.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "47",
+      "name": "Oxycodone",
+      "stock": 45,
+      "category": "Pain Management",
+      "price": 135.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "48",
+      "name": "Tramadol",
+      "stock": 120,
+      "category": "Pain Management",
+      "price": 68.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "49",
+      "name": "Warfarin",
+      "stock": 85,
+      "category": "Anticoagulants",
+      "price": 32.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "50",
+      "name": "Rivaroxaban",
+      "stock": 25,
+      "category": "Anticoagulants",
+      "price": 145.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "51",
+      "name": "Apixaban",
+      "stock": 110,
+      "category": "Anticoagulants",
+      "price": 155.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "52",
+      "name": "Azithromycin",
+      "stock": 180,
+      "category": "Antibiotics",
+      "price": 45.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "53",
+      "name": "Clarithromycin",
+      "stock": 35,
+      "category": "Antibiotics",
+      "price": 52.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "54",
+      "name": "Doxycycline",
+      "stock": 95,
+      "category": "Antibiotics",
+      "price": 38.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "55",
+      "name": "Valsartan",
+      "stock": 140,
+      "category": "Cardiovascular",
+      "price": 65.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "56",
+      "name": "Diltiazem",
+      "stock": 20,
+      "category": "Cardiovascular",
+      "price": 48.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "57",
+      "name": "Carvedilol",
+      "stock": 75,
+      "category": "Cardiovascular",
+      "price": 42.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "58",
+      "name": "Levetiracetam",
+      "stock": 110,
+      "category": "Neurology",
+      "price": 95.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "59",
+      "name": "Lamotrigine",
+      "stock": 15,
+      "category": "Neurology",
+      "price": 88.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "60",
+      "name": "Valproic Acid",
+      "stock": 85,
+      "category": "Neurology",
+      "price": 78.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "61",
+      "name": "Olanzapine",
+      "stock": 120,
+      "category": "Mental Health",
+      "price": 125.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "62",
+      "name": "Quetiapine",
+      "stock": 25,
+      "category": "Mental Health",
+      "price": 115.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "63",
+      "name": "Risperidone",
+      "stock": 90,
+      "category": "Mental Health",
+      "price": 98.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "64",
+      "name": "Budesonide",
+      "stock": 150,
+      "category": "Respiratory",
+      "price": 72.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "65",
+      "name": "Ipratropium",
+      "stock": 30,
+      "category": "Respiratory",
+      "price": 58.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "66",
+      "name": "Tiotropium",
+      "stock": 85,
+      "category": "Respiratory",
+      "price": 82.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "67",
+      "name": "Tacrolimus",
+      "stock": 45,
+      "category": "Immunosuppressants",
+      "price": 195.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "68",
+      "name": "Cyclosporine",
+      "stock": 75,
+      "category": "Immunosuppressants",
+      "price": 185.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "69",
+      "name": "Mycophenolate",
+      "stock": 60,
+      "category": "Immunosuppressants",
+      "price": 165.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "70",
+      "name": "Ondansetron",
+      "stock": 120,
+      "category": "Antiemetics",
+      "price": 42.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "71",
+      "name": "Granisetron",
+      "stock": 25,
+      "category": "Antiemetics",
+      "price": 38.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "72",
+      "name": "Metoclopramide",
+      "stock": 95,
+      "category": "Antiemetics",
+      "price": 28.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "73",
+      "name": "Bisacodyl",
+      "stock": 150,
+      "category": "Gastrointestinal",
+      "price": 15.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "74",
+      "name": "Docusate",
+      "stock": 20,
+      "category": "Gastrointestinal",
+      "price": 12.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "75",
+      "name": "Senna",
+      "stock": 85,
+      "category": "Gastrointestinal",
+      "price": 18.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "76",
+      "name": "Betamethasone",
+      "stock": 110,
+      "category": "Dermatology",
+      "price": 35.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "77",
+      "name": "Hydrocortisone",
+      "stock": 30,
+      "category": "Dermatology",
+      "price": 28.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "78",
+      "name": "Mometasone",
+      "stock": 95,
+      "category": "Dermatology",
+      "price": 42.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "79",
+      "name": "Alendronate",
+      "stock": 75,
+      "category": "Bone Health",
+      "price": 65.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "80",
+      "name": "Risedronate",
+      "stock": 15,
+      "category": "Bone Health",
+      "price": 72.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "81",
+      "name": "Ibandronate",
+      "stock": 95,
+      "category": "Bone Health",
+      "price": 82.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "82",
+      "name": "Adalimumab",
+      "stock": 40,
+      "category": "Biologics",
+      "price": 1250.5,
+      "expiryDate": "2025-10-20",
+      "status": "Low Stock"
+    },
+    {
+      "id": "83",
+      "name": "Etanercept",
+      "stock": 65,
+      "category": "Biologics",
+      "price": 1185.75,
+      "expiryDate": "2025-07-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "84",
+      "name": "Infliximab",
+      "stock": 35,
+      "category": "Biologics",
+      "price": 1350.99,
+      "expiryDate": "2025-11-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "85",
+      "name": "Rituximab",
+      "stock": 55,
+      "category": "Oncology",
+      "price": 2250.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "86",
+      "name": "Trastuzumab",
+      "stock": 25,
+      "category": "Oncology",
+      "price": 2450.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "87",
+      "name": "Bevacizumab",
+      "stock": 45,
+      "category": "Oncology",
+      "price": 2150.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "88",
+      "name": "Methylphenidate",
+      "stock": 120,
+      "category": "ADHD",
+      "price": 85.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "89",
+      "name": "Atomoxetine",
+      "stock": 15,
+      "category": "ADHD",
+      "price": 92.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "90",
+      "name": "Lisdexamfetamine",
+      "stock": 85,
+      "category": "ADHD",
+      "price": 98.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "91",
+      "name": "Donepezil",
+      "stock": 75,
+      "category": "Memory Enhancement",
+      "price": 125.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "92",
+      "name": "Memantine",
+      "stock": 20,
+      "category": "Memory Enhancement",
+      "price": 135.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "93",
+      "name": "Rivastigmine",
+      "stock": 55,
+      "category": "Memory Enhancement",
+      "price": 115.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "94",
+      "name": "Sumatriptan",
+      "stock": 110,
+      "category": "Migraine",
+      "price": 75.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "95",
+      "name": "Rizatriptan",
+      "stock": 25,
+      "category": "Migraine",
+      "price": 82.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "96",
+      "name": "Zolmitriptan",
+      "stock": 70,
+      "category": "Migraine",
+      "price": 78.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "97",
+      "name": "Dutasteride",
+      "stock": 95,
+      "category": "Hair Loss",
+      "price": 125.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "98",
+      "name": "Minoxidil",
+      "stock": 20,
+      "category": "Hair Loss",
+      "price": 45.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "99",
+      "name": "Finasteride",
+      "stock": 80,
+      "category": "Hair Loss",
+      "price": 85.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "100",
+      "name": "Orlistat",
+      "stock": 150,
+      "category": "Weight Management",
+      "price": 95.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "101",
+      "name": "Liraglutide",
+      "stock": 30,
+      "category": "Weight Management",
+      "price": 285.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "102",
+      "name": "Phentermine",
+      "stock": 65,
+      "category": "Weight Management",
+      "price": 125.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "103",
+      "name": "Naltrexone",
+      "stock": 85,
+      "category": "Addiction Treatment",
+      "price": 165.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "104",
+      "name": "Buprenorphine",
+      "stock": 15,
+      "category": "Addiction Treatment",
+      "price": 195.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "105",
+      "name": "Acamprosate",
+      "stock": 55,
+      "category": "Addiction Treatment",
+      "price": 145.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "106",
+      "name": "Isotretinoin",
+      "stock": 120,
+      "category": "Dermatology",
+      "price": 175.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "107",
+      "name": "Adapalene",
+      "stock": 25,
+      "category": "Dermatology",
+      "price": 85.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "108",
+      "name": "Tretinoin",
+      "stock": 90,
+      "category": "Dermatology",
+      "price": 95.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "109",
+      "name": "Clomiphene",
+      "stock": 45,
+      "category": "Fertility",
+      "price": 225.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "110",
+      "name": "Follitropin",
+      "stock": 75,
+      "category": "Fertility",
+      "price": 450.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "111",
+      "name": "Menotropins",
+      "stock": 35,
+      "category": "Fertility",
+      "price": 385.99,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "112",
+      "name": "Ranibizumab",
+      "stock": 25,
+      "category": "Ophthalmology",
+      "price": 1850.5,
+      "expiryDate": "2025-10-20",
+      "status": "Low Stock"
+    },
+    {
+      "id": "113",
+      "name": "Aflibercept",
+      "stock": 40,
+      "category": "Ophthalmology",
+      "price": 1950.75,
+      "expiryDate": "2025-07-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "114",
+      "name": "Verteporfin",
+      "stock": 15,
+      "category": "Ophthalmology",
+      "price": 1750.99,
+      "expiryDate": "2025-11-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "115",
+      "name": "Teriparatide",
+      "stock": 55,
+      "category": "Bone Health",
+      "price": 850.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "116",
+      "name": "Denosumab",
+      "stock": 30,
+      "category": "Bone Health",
+      "price": 950.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "117",
+      "name": "Calcitonin",
+      "stock": 65,
+      "category": "Bone Health",
+      "price": 750.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "118",
+      "name": "Pegfilgrastim",
+      "stock": 45,
+      "category": "Hematology",
+      "price": 2250.5,
+      "expiryDate": "2025-10-20",
+      "status": "Low Stock"
+    },
+    {
+      "id": "119",
+      "name": "Filgrastim",
+      "stock": 70,
+      "category": "Hematology",
+      "price": 1850.75,
+      "expiryDate": "2025-07-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "120",
+      "name": "Epoetin",
+      "stock": 25,
+      "category": "Hematology",
+      "price": 1950.99,
+      "expiryDate": "2025-11-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "121",
+      "name": "Natalizumab",
+      "stock": 35,
+      "category": "Multiple Sclerosis",
+      "price": 3250.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "122",
+      "name": "Fingolimod",
+      "stock": 60,
+      "category": "Multiple Sclerosis",
+      "price": 2850.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "123",
+      "name": "Dimethyl Fumarate",
+      "stock": 45,
+      "category": "Multiple Sclerosis",
+      "price": 2650.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "124",
+      "name": "Vedolizumab",
+      "stock": 30,
+      "category": "Gastroenterology",
+      "price": 2750.5,
+      "expiryDate": "2025-10-20",
+      "status": "Low Stock"
+    },
+    {
+      "id": "125",
+      "name": "Ustekinumab",
+      "stock": 55,
+      "category": "Gastroenterology",
+      "price": 2950.75,
+      "expiryDate": "2025-07-10",
+      "status": "In Stock"
+    },
+    {
+      "id": "126",
+      "name": "Golimumab",
+      "stock": 40,
+      "category": "Gastroenterology",
+      "price": 2850.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "127",
+      "name": "Secukinumab",
+      "stock": 25,
+      "category": "Immunology",
+      "price": 3150.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "128",
+      "name": "Ixekizumab",
+      "stock": 50,
+      "category": "Immunology",
+      "price": 3250.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "129",
+      "name": "Brodalumab",
+      "stock": 15,
+      "category": "Immunology",
+      "price": 3050.99,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "130",
+      "name": "Mepolizumab",
+      "stock": 60,
+      "category": "Respiratory",
+      "price": 2750.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "131",
+      "name": "Benralizumab",
+      "stock": 20,
+      "category": "Respiratory",
+      "price": 2850.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "132",
+      "name": "Reslizumab",
+      "stock": 45,
+      "category": "Respiratory",
+      "price": 2650.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "133",
+      "name": "Erenumab",
+      "stock": 70,
+      "category": "Neurology",
+      "price": 1850.5,
+      "expiryDate": "2025-08-25",
+      "status": "In Stock"
+    },
+    {
+      "id": "134",
+      "name": "Galcanezumab",
+      "stock": 25,
+      "category": "Neurology",
+      "price": 1950.75,
+      "expiryDate": "2025-12-15",
+      "status": "Low Stock"
+    },
+    {
+      "id": "135",
+      "name": "Fremanezumab",
+      "stock": 55,
+      "category": "Neurology",
+      "price": 1750.99,
+      "expiryDate": "2025-09-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "136",
+      "name": "Dupilumab",
+      "stock": 85,
+      "category": "Dermatology",
+      "price": 2250.5,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "137",
+      "name": "Tralokinumab",
+      "stock": 15,
+      "category": "Dermatology",
+      "price": 2350.75,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "138",
+      "name": "Lebrikizumab",
+      "stock": 40,
+      "category": "Dermatology",
+      "price": 2150.99,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "139",
+      "name": "Romosozumab",
+      "stock": 30,
+      "category": "Bone Health",
+      "price": 1650.5,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "140",
+      "name": "Abaloparatide",
+      "stock": 65,
+      "category": "Bone Health",
+      "price": 1750.75,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "141",
+      "name": "Burosumab",
+      "stock": 35,
+      "category": "Endocrine",
+      "price": 4250.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "142",
+      "name": "Tezepelumab",
+      "stock": 55,
+      "category": "Respiratory",
+      "price": 3850.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "143",
+      "name": "Risankizumab",
+      "stock": 20,
+      "category": "Immunology",
+      "price": 3650.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "144",
+      "name": "Guselkumab",
+      "stock": 45,
+      "category": "Immunology",
+      "price": 3750.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "145",
+      "name": "Tildrakizumab",
+      "stock": 30,
+      "category": "Immunology",
+      "price": 3550.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "146",
+      "name": "Satralizumab",
+      "stock": 60,
+      "category": "Neurology",
+      "price": 4150.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "147",
+      "name": "Inebilizumab",
+      "stock": 25,
+      "category": "Neurology",
+      "price": 4250.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "148",
+      "name": "Ofatumumab",
+      "stock": 50,
+      "category": "Neurology",
+      "price": 3950.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "149",
+      "name": "Ravulizumab",
+      "stock": 15,
+      "category": "Hematology",
+      "price": 5250.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "150",
+      "name": "Luspatercept",
+      "stock": 40,
+      "category": "Hematology",
+      "price": 4850.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "151",
+      "name": "Caplacizumab",
+      "stock": 35,
+      "category": "Hematology",
+      "price": 4650.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "152",
+      "name": "Givosiran",
+      "stock": 55,
+      "category": "Genetic Disorders",
+      "price": 6250.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "153",
+      "name": "Lumasiran",
+      "stock": 20,
+      "category": "Genetic Disorders",
+      "price": 6150.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "154",
+      "name": "Vutrisiran",
+      "stock": 45,
+      "category": "Genetic Disorders",
+      "price": 5950.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "155",
+      "name": "Casimersen",
+      "stock": 30,
+      "category": "Genetic Disorders",
+      "price": 5850.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "156",
+      "name": "Viltolarsen",
+      "stock": 40,
+      "category": "Genetic Disorders",
+      "price": 5750.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "157",
+      "name": "Lonapegsomatropin",
+      "stock": 25,
+      "category": "Endocrine",
+      "price": 4850.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "158",
+      "name": "Somapacitan",
+      "stock": 50,
+      "category": "Endocrine",
+      "price": 4650.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "159",
+      "name": "Setmelanotide",
+      "stock": 15,
+      "category": "Endocrine",
+      "price": 4750.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "160",
+      "name": "Voclosporin",
+      "stock": 60,
+      "category": "Immunology",
+      "price": 3850.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "161",
+      "name": "Anifrolumab",
+      "stock": 20,
+      "category": "Immunology",
+      "price": 3950.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "162",
+      "name": "Pegcetacoplan",
+      "stock": 45,
+      "category": "Hematology",
+      "price": 5150.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "163",
+      "name": "Avacopan",
+      "stock": 35,
+      "category": "Immunology",
+      "price": 4050.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "164",
+      "name": "Belumosudil",
+      "stock": 55,
+      "category": "Immunology",
+      "price": 3850.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "165",
+      "name": "Relugolix",
+      "stock": 30,
+      "category": "Hormonal",
+      "price": 2850.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "166",
+      "name": "Odevixibat",
+      "stock": 40,
+      "category": "Gastrointestinal",
+      "price": 4250.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "167",
+      "name": "Maralixibat",
+      "stock": 25,
+      "category": "Gastrointestinal",
+      "price": 4150.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "168",
+      "name": "Fosdenopterin",
+      "stock": 50,
+      "category": "Genetic Disorders",
+      "price": 6350.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "169",
+      "name": "Asciminib",
+      "stock": 15,
+      "category": "Oncology",
+      "price": 5250.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "170",
+      "name": "Mobocertinib",
+      "stock": 45,
+      "category": "Oncology",
+      "price": 5150.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "171",
+      "name": "Sotorasib",
+      "stock": 35,
+      "category": "Oncology",
+      "price": 5350.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "172",
+      "name": "Amivantamab",
+      "stock": 55,
+      "category": "Oncology",
+      "price": 5450.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "173",
+      "name": "Tepotinib",
+      "stock": 20,
+      "category": "Oncology",
+      "price": 5250.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "174",
+      "name": "Umbralisib",
+      "stock": 45,
+      "category": "Oncology",
+      "price": 5150.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "175",
+      "name": "Tivozanib",
+      "stock": 30,
+      "category": "Oncology",
+      "price": 5050.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "176",
+      "name": "Infigratinib",
+      "stock": 60,
+      "category": "Oncology",
+      "price": 5550.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "177",
+      "name": "Dostarlimab",
+      "stock": 25,
+      "category": "Oncology",
+      "price": 5650.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "178",
+      "name": "Loncastuximab",
+      "stock": 50,
+      "category": "Oncology",
+      "price": 5750.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "179",
+      "name": "Tafasitamab",
+      "stock": 15,
+      "category": "Oncology",
+      "price": 5850.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "180",
+      "name": "Belzutifan",
+      "stock": 40,
+      "category": "Oncology",
+      "price": 5950.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "181",
+      "name": "Trilaciclib",
+      "stock": 35,
+      "category": "Oncology",
+      "price": 4950.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "182",
+      "name": "Melphalan",
+      "stock": 55,
+      "category": "Oncology",
+      "price": 4850.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "183",
+      "name": "Idecabtagene",
+      "stock": 20,
+      "category": "Oncology",
+      "price": 6950.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "184",
+      "name": "Lisocabtagene",
+      "stock": 45,
+      "category": "Oncology",
+      "price": 6850.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "185",
+      "name": "Brexucabtagene",
+      "stock": 30,
+      "category": "Oncology",
+      "price": 6750.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "186",
+      "name": "Ciltacabtagene",
+      "stock": 40,
+      "category": "Oncology",
+      "price": 7050.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "187",
+      "name": "Avalglucosidase",
+      "stock": 25,
+      "category": "Genetic Disorders",
+      "price": 6450.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "188",
+      "name": "Atidarsagene",
+      "stock": 35,
+      "category": "Genetic Disorders",
+      "price": 7150.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "189",
+      "name": "Eladocagene",
+      "stock": 20,
+      "category": "Genetic Disorders",
+      "price": 7250.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "190",
+      "name": "Olipudase",
+      "stock": 45,
+      "category": "Genetic Disorders",
+      "price": 6850.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "191",
+      "name": "Arimoclomol",
+      "stock": 30,
+      "category": "Genetic Disorders",
+      "price": 6650.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "192",
+      "name": "Efgartigimod",
+      "stock": 55,
+      "category": "Immunology",
+      "price": 4550.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "193",
+      "name": "Pegzilarginase",
+      "stock": 25,
+      "category": "Genetic Disorders",
+      "price": 6950.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "194",
+      "name": "Vosoritide",
+      "stock": 40,
+      "category": "Genetic Disorders",
+      "price": 7350.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    },
+    {
+      "id": "195",
+      "name": "Casgevy",
+      "stock": 15,
+      "category": "Genetic Disorders",
+      "price": 8250.5,
+      "expiryDate": "2025-09-30",
+      "status": "Low Stock"
+    },
+    {
+      "id": "196",
+      "name": "Rethymic",
+      "stock": 30,
+      "category": "Immunology",
+      "price": 9150.75,
+      "expiryDate": "2025-10-20",
+      "status": "In Stock"
+    },
+    {
+      "id": "197",
+      "name": "Stratagraft",
+      "stock": 20,
+      "category": "Dermatology",
+      "price": 8450.99,
+      "expiryDate": "2025-07-10",
+      "status": "Low Stock"
+    },
+    {
+      "id": "198",
+      "name": "Nexviazyme",
+      "stock": 45,
+      "category": "Genetic Disorders",
+      "price": 7850.5,
+      "expiryDate": "2025-11-30",
+      "status": "In Stock"
+    },
+    {
+      "id": "199",
+      "name": "Bylvay",
+      "stock": 35,
+      "category": "Gastrointestinal",
+      "price": 6250.75,
+      "expiryDate": "2025-08-25",
+      "status": "Low Stock"
+    },
+    {
+      "id": "200",
+      "name": "Livmarli",
+      "stock": 50,
+      "category": "Gastrointestinal",
+      "price": 6150.99,
+      "expiryDate": "2025-12-15",
+      "status": "In Stock"
+    }
+  ]
+}
