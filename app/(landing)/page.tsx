@@ -8,13 +8,13 @@ export default function LandingPage() {
     return (
         <div className="min-h-screen relative">
             {/* Content wrapper */}
-            <div className="relative z-10 backdrop-blur-sm max-w-7xl mx-auto top-36 rounded-xl border border-gray-200">
+            <div className="relative z-10 backdrop-blur-sm max-w-7xl mx-auto top-36 rounded-xl border border-border bg-background/50">
                 {/* Hero Section */}
                 <section className="py-20 px-4 md:px-6 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
                         Modern Healthcare Management
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                         Streamline your healthcare practice with our comprehensive patient management system
                     </p>
                     <div className="flex gap-4 justify-center">
@@ -30,12 +30,12 @@ export default function LandingPage() {
                 {/* Features Section */}
                 <section className="py-20 px-4 md:px-6">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+                        <h2 className="text-3xl font-bold text-center text-foreground mb-12">Key Features</h2>
                         <div className="grid md:grid-cols-3 gap-8">
                             {features.map((feature, index) => (
-                                <div key={index} className="p-6 rounded-lg border bg-white shadow-sm">
-                                    <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                                    <p className="text-gray-600">{feature.description}</p>
+                                <div key={index} className="p-6 rounded-lg border bg-card shadow-sm">
+                                    <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
+                                    <p className="text-muted-foreground">{feature.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -59,8 +59,7 @@ export default function LandingPage() {
             {/* Waves positioned at the bottom */}
             <div className="absolute inset-0 z-0">
                 <Waves
-                    lineColor="#767676"
-                    backgroundColor="rgba(255, 255, 255, 0.2)"
+                    backgroundColor="transparent"
                     waveSpeedX={0.01}
                     waveSpeedY={0.01}
                     waveAmpX={40}

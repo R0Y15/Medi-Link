@@ -17,9 +17,9 @@ export default function LandingLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={`${inter.className} bg-background`}>
                 <Navbar />
-                <main className="min-h-screen bg-slate-100">
+                <main className="min-h-screen">
                     {children}
                 </main>
                 <Footer />
