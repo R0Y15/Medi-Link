@@ -26,7 +26,7 @@ export function PharmacyOverview({ data, onFilter }: PharmacyOverviewProps) {
           cardTitle="Total Medicines" 
           cardDetail={totalMedicines.toString()} 
           logo="medicine" 
-          color="blue" 
+          color="aqua" 
           onViewDetails={() => onFilter({ field: 'status', value: null })}
         />
         <PatientCard 
@@ -47,7 +47,7 @@ export function PharmacyOverview({ data, onFilter }: PharmacyOverviewProps) {
           cardTitle="Expiring Soon" 
           cardDetail={expiringCount.toString()} 
           logo="clock" 
-          color="blue" 
+          color="aqua" 
           onViewDetails={() => {
             const threeMonthsFromNow = new Date()
             threeMonthsFromNow.setMonth(threeMonthsFromNow.getMonth() + 3)

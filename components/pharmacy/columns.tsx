@@ -52,7 +52,7 @@ function ColumnActions({ medicine, onRefresh }: ColumnActionsProps) {
             <MoreHorizontal className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="bg-white">
+        <DropdownMenuContent align="end">
           <DropdownMenuLabel className="font-semibold">Actions</DropdownMenuLabel>
           <DropdownMenuItem onClick={() => {
             navigator.clipboard.writeText(medicine.id)
@@ -72,7 +72,7 @@ function ColumnActions({ medicine, onRefresh }: ColumnActionsProps) {
               setDeleteDialogOpen(true)
               setDropdownOpen(false)
             }}
-            className="text-red-600"
+            className="text-destructive"
           >
             Delete medicine
           </DropdownMenuItem>
@@ -124,7 +124,11 @@ export const columns: ColumnDef<Medicine>[] = [
     accessorKey: "category",
     header: "Category",
     cell: ({ row }) => {
-      return <Badge variant="outline">{row.getValue("category")}</Badge>
+      return (
+        <Badge variant="secondary" className="bg-secondary/50 text-foreground">
+          {row.getValue("category")}
+        </Badge>
+      )
     },
   },
   {

@@ -43,19 +43,19 @@ export function DeleteMedicineDialog({
 
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      <AlertDialogContent>
+      <AlertDialogContent className="bg-background">
         <AlertDialogHeader>
-          <AlertDialogTitle>Delete Medicine</AlertDialogTitle>
-          <AlertDialogDescription>
+          <AlertDialogTitle className="text-foreground">Delete Medicine</AlertDialogTitle>
+          <AlertDialogDescription className="text-muted-foreground">
             Are you sure you want to delete {medicine.name}? This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={() => onOpenChange(false)}>
+          <AlertDialogCancel className="bg-muted text-foreground hover:bg-muted/90" onClick={() => onOpenChange(false)}>
             Cancel
           </AlertDialogCancel>
           <AlertDialogAction 
-            variant="destructive" 
+            className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             onClick={handleDelete}
           >
             Delete

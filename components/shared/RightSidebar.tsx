@@ -15,14 +15,14 @@ const RightSidebar = () => {
 
   return (
     <div className='rightsidebar'>
-      <div className='flex flex-1 flex-col bg-white rounded-2xl py-5 shadow-lg p-8 gap-5'>
-        <h2 className="my-2 text-heading4-semibold">Consultation Date</h2>
+      <div className='flex flex-1 flex-col bg-card rounded-2xl py-5 shadow-lg p-8 gap-5'>
+        <h2 className="my-2 text-heading4-semibold text-foreground">Consultation Date</h2>
         <div className="border-none rounded-lg">
           <Calendar
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="rounded-lg bg-slate-100 w-full"
+            className="rounded-lg bg-muted w-full"
             initialFocus
           />
         </div>
@@ -34,7 +34,7 @@ const RightSidebar = () => {
 
         <div className="flex flex-col gap-2 w-full">
           <div className="flex flex-row justify-between items-center">
-            <h2 className="my-2 text-heading4-semibold">Past Vaccination</h2>
+            <h2 className="my-2 text-heading4-semibold text-foreground">Past Vaccination</h2>
             <Button className="shadow-none border-none p-0">
               <Image
                 src={'/assets/x-dots.svg'}

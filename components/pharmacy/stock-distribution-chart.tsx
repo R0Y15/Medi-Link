@@ -39,44 +39,47 @@ export function StockDistributionChart({ data }: StockDistributionChartProps) {
     .slice(0, 8) // Show top 8 categories
 
   return (
-    <div className="w-full bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Stock Distribution by Category</h2>
+    <div className="w-full bg-card rounded-2xl p-6 border shadow-sm">
+      <h2 className="text-2xl font-bold text-foreground mb-6">Stock Distribution by Category</h2>
       <div className="h-[400px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
             <defs>
               <linearGradient id="inStockGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(0, 149, 246, 0.5)" stopOpacity={1} />
-                <stop offset="100%" stopColor="rgba(0, 149, 246, 0.1)" stopOpacity={1} />
+                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.5} />
+                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={0.1} />
               </linearGradient>
               <linearGradient id="lowStockGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(45, 212, 191, 0.5)" stopOpacity={1} />
-                <stop offset="100%" stopColor="rgba(45, 212, 191, 0.1)" stopOpacity={1} />
+                <stop offset="0%" stopColor="hsl(var(--warning))" stopOpacity={0.5} />
+                <stop offset="100%" stopColor="hsl(var(--warning))" stopOpacity={0.1} />
               </linearGradient>
               <linearGradient id="outOfStockGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(251, 113, 133, 0.5)" stopOpacity={1} />
-                <stop offset="100%" stopColor="rgba(251, 113, 133, 0.1)" stopOpacity={1} />
+                <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity={0.5} />
+                <stop offset="100%" stopColor="hsl(var(--destructive))" stopOpacity={0.1} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
             <XAxis 
               dataKey="category" 
               angle={-45}
               textAnchor="end"
               height={80}
               interval={0}
-              tick={{ fontSize: 12, fill: 'var(--color-text-1)' }}
+              tick={{ fontSize: 12, fill: 'hsl(var(--foreground))' }}
+              stroke="hsl(var(--border))"
             />
             <YAxis 
               tickFormatter={(value) => `${value}`}
-              tick={{ fontSize: 12, fill: 'var(--color-text-1)' }}
+              tick={{ fontSize: 12, fill: 'hsl(var(--foreground))' }}
+              stroke="hsl(var(--border))"
             />
             <Tooltip 
               contentStyle={{ 
-                backgroundColor: 'white',
-                border: '1px solid #e5e7eb',
+                backgroundColor: 'hsl(var(--card))',
+                border: '1px solid hsl(var(--border))',
                 borderRadius: '8px',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                color: 'hsl(var(--foreground))'
               }}
             />
             <Bar 
