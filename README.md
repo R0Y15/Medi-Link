@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Medi-Link Patient Dashboard
 
-## Getting Started
+A comprehensive medical dashboard built with Next.js, featuring pharmacy management, appointment scheduling, and patient monitoring capabilities.
 
-First, run the development server:
+### **Table of Contents**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. [Features](#features)
+2. [Backend API Requirements](#backend-api-requirements)
+3. [Setup Instructions](#setup-instructions)
+4. [UI/UX Guidelines](#uiux-guidelines)
+5. [Technical Specifications](#technical-specifications)
+6. [Out-of-Scope Items](#out-of-scope-items)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Setup Instructions**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### **Prerequisites**
+- Node.js (v18 or higher)
+- npm (Node Package Manager)
 
-## Learn More
+#### **Installation Steps**
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/R0Y15/Medi-Link
+   cd Medi-Link
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install Dependencies**
+   ```bash
+   # Install project dependencies
+   npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   # Install JSON Server globally
+   npm install -g json-server
+   ```
 
-## Deploy on Vercel
+3. **Set Up Environment Variables**
+   ```bash
+   # Create a .env.local file in the root directory
+   touch .env.local
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   # Add the following environment variables
+   NEXT_PUBLIC_API_URL=http://localhost:3001
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Start the Development Servers**
+
+   a. **Start the JSON Server (Mock Backend)**
+   ```bash
+   # In one terminal window
+   json-server --watch db.json --port 3001
+   ```
+
+   b. **Start the Next.js Development Server**
+   ```bash
+   # In another terminal window
+   npm run dev
+   ```
+
+5. **Access the Application**
+   - Frontend: Open [http://localhost:3000](http://localhost:3000) in your browser
+   - Backend API: Available at [http://localhost:3001](http://localhost:3001)
+
+#### **Available Scripts**
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the production application
+- `npm start` - Start the production server
+- `npm run lint` - Run ESLint for code quality checks
+
+#### **Testing the Setup**
+
+1. The frontend should show the Medi-Link dashboard
+2. The pharmacy page should display medicine data from the JSON Server
+3. You should be able to perform CRUD operations on medicines
+
+#### **Troubleshooting**
+
+- If you see a "Failed to fetch data" error, ensure the JSON Server is running
+- If environment variables aren't working, restart the Next.js development server
+- Clear your browser cache if you see stale data
