@@ -1782,5 +1782,102 @@
       "expiryDate": "2025-12-15",
       "status": "In Stock"
     }
+  ],
+  "appointments": [
+    {
+      "id": "APP001",
+      "patientName": "Bishal Roy",
+      "doctorName": "Dr. Ashton Cleve",
+      "speciality": "Neuro Poly",
+      "appointmentDate": "2025-01-29",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "status": "cancelled",
+      "symptoms": "Frequent headaches and dizziness",
+      "notes": "Follow-up consultation for previous treatment",
+      "type": "Regular Checkup"
+    },
+    {
+      "id": "APP002",
+      "patientName": "Bishal Roy",
+      "doctorName": "Dr. Kyle Eloise",
+      "speciality": "Lungs Poly",
+      "appointmentDate": "2025-01-29",
+      "startTime": "12:30",
+      "endTime": "13:00",
+      "status": "Upcoming",
+      "symptoms": "Persistent cough and chest pain",
+      "notes": "Initial consultation",
+      "type": "New Patient"
+    },
+    {
+      "id": "APP003",
+      "patientName": "Bishal Roy",
+      "doctorName": "Dr. Sarah Chen",
+      "speciality": "Cardiology",
+      "appointmentDate": "2025-02-05",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "status": "Scheduled",
+      "symptoms": "Regular heart checkup",
+      "notes": "Annual cardiac evaluation",
+      "type": "Regular Checkup"
+    },
+    {
+      "id": "APP004",
+      "patientName": "Bishal Roy",
+      "doctorName": "Dr. Michael Ross",
+      "speciality": "Orthopedics",
+      "appointmentDate": "2025-01-15",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "status": "Completed",
+      "symptoms": "Knee pain after injury",
+      "notes": "Post-surgery follow up",
+      "type": "Follow-up"
+    },
+    {
+      "id": "APP005",
+      "patientName": "Bishal Roy",
+      "doctorName": "Dr. Emily Watson",
+      "speciality": "Dermatology",
+      "appointmentDate": "2025-02-10",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "status": "Scheduled",
+      "symptoms": "Skin rash and itching",
+      "notes": "Allergy evaluation",
+      "type": "New Patient"
+    },
+    {
+      "id": "d8a3",
+      "doctorName": "Dr. Kyle Eloise",
+      "speciality": "Lungs",
+      "appointmentDate": "2025-01-30",
+      "startTime": "12:00",
+      "endTime": "13:00",
+      "status": "upcoming",
+      "notes": "Hiiii"
+    },
+    {
+      "id": "9611",
+      "doctorName": "Dr. Sarah Chen",
+      "speciality": "Lungs",
+      "appointmentDate": "2025-02-13",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "status": "upcoming",
+      "notes": "sbsnsbsbs"
+    },
+    {
+      "id": "f30a",
+      "doctorName": "Dr. Sarah Chen",
+      "speciality": "Orthopedics",
+      "appointmentDate": "2025-02-12",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "status": "upcoming",
+      "notes": "snshshs"
+    }
   ]
 }
