@@ -36,7 +36,7 @@ export interface VaccineProps {
 
 export const sidebarLinks = [
     {
-        'route': '/',
+        'route': '/patientDashboard',
         'icon': dashboardIcon,
         'activeIcon': dashboard2Icon,
         'label': 'Dashboard'

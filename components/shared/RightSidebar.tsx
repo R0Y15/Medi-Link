@@ -1,17 +1,57 @@
 "use client"
 
 import { Calendar } from "@/components/ui/calendar"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { InfoCard, VaccineCards } from "../cards";
-import { vaccines } from "@/constants";
+import { API_ENDPOINTS } from "@/constants";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
+interface Appointment {
+  id: string;
+  doctorName: string;
+  speciality: string;
+  startTime: string;
+  endTime: string;
+  appointmentDate: string;
+}
+
+interface Vaccination {
+  id: string;
+  name: string;
+  date: string;
+  dose: string;
+  location: string;
+}
+
 const RightSidebar = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [todayAppointments, setTodayAppointments] = useState<Appointment[]>([]);
+  const [vaccinations, setVaccinations] = useState<Vaccination[]>([]);
 
-  // console.log(date);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch appointments
+        const appointmentsRes = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.appointments}`);
+        const appointmentsData = await appointmentsRes.json();
+        const today = new Date().toISOString().split('T')[0];
+        const todayAppts = appointmentsData.filter((apt: Appointment) => 
+          apt.appointmentDate === today
+        );
+        setTodayAppointments(todayAppts);
 
+        // Fetch vaccinations
+        const vaccinationsRes = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.vaccinations}`);
+        const vaccinationsData = await vaccinationsRes.json();
+        setVaccinations(vaccinationsData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className='rightsidebar'>
@@ -28,24 +68,36 @@ const RightSidebar = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <InfoCard img={'/assets/virus.svg'} time="10:00 - 11:30" title="Neuro Poly" desc="Dr. Ashton Cleve" highlight />
-          <InfoCard img={'/assets/lungs.svg'} time="12:30 - 13:00" title="Lungs Poly" desc="Dr. Kyle Eloise" />
+          {todayAppointments.map((appointment) => (
+            <InfoCard 
+              key={appointment.id}
+              img={appointment.speciality.toLowerCase().includes('neuro') ? '/assets/virus.svg' : '/assets/lungs.svg'}
+              time={`${appointment.startTime} - ${appointment.endTime}`}
+              title={`${appointment.speciality}`}
+              desc={`Dr. ${appointment.doctorName}`}
+              highlight={appointment.speciality.toLowerCase().includes('neuro')}
+              className={appointment.speciality.toLowerCase().includes('neuro') ? 
+                "bg-primary/10 text-primary dark:bg-[#193741] dark:text-[#4fd1c5] hover:bg-primary/20 dark:hover:bg-[#193741]/80 transition-colors" : 
+                "bg-muted hover:bg-muted/80 transition-colors"}
+            />
+          ))}
         </div>
 
         <div className="flex flex-col gap-2 w-full">
           <div className="flex flex-row justify-between items-center">
-            <h2 className="my-2 text-heading4-semibold text-foreground">Past Vaccination</h2>
-            <Button className="shadow-none border-none p-0">
+            <h2 className="text-heading4-semibold text-foreground">Past Vaccination</h2>
+            <Button variant="ghost" size="icon" className="hover:bg-transparent">
               <Image
                 src={'/assets/x-dots.svg'}
                 width={20}
                 height={10}
                 alt="more"
+                className="brightness-0 dark:brightness-200 dark:invert"
               />
             </Button>
           </div>
           <div className="h-12 overflow-auto no-scrollbar">
-            {vaccines.map((vaccine, index) => (
+            {vaccinations.map((vaccine, index) => (
               <VaccineCards key={index} title={vaccine.name} date={vaccine.date} />
             ))}
           </div>

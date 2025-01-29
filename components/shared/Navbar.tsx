@@ -8,7 +8,7 @@ import { UserButton } from "@clerk/nextjs";
 const Navbar = () => {
   return (
     <nav className='topbar'>
-      <Link href='/' className='flex items-center gap-4'>
+      <Link href='/patientDashboard' className='flex items-center gap-4'>
         <Image
           src={'/logo.svg'}
           alt='logo'
