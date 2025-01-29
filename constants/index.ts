@@ -1,5 +1,19 @@
 import { ChartConfig } from "@/components/ui/chart";
 
+// Import icons
+import dashboardIcon from '@/public/assets/dashboard.svg';
+import dashboard2Icon from '@/public/assets/dashboard2.svg';
+import appointIcon from '@/public/assets/appoint.svg';
+import appoint2Icon from '@/public/assets/appoint2.svg';
+import pharmacyIcon from '@/public/assets/pharmacy.svg';
+import pharmacy2Icon from '@/public/assets/pharmacy2.svg';
+import activityIcon from '@/public/assets/activity.svg';
+import activity2Icon from '@/public/assets/activity2.svg';
+import reportIcon from '@/public/assets/report.svg';
+import report2Icon from '@/public/assets/report2.svg';
+import settingsIcon from '@/public/assets/settings.svg';
+import settings2Icon from '@/public/assets/settings2.svg';
+
 export interface PatientCardProps {
     cardTitle: string;
     cardDetail: string;
@@ -23,38 +37,38 @@ export interface VaccineProps {
 export const sidebarLinks = [
     {
         'route': '/',
-        'icon': 'dashboard.svg',
-        'activeIcon': 'dashboard2.svg',
+        'icon': dashboardIcon,
+        'activeIcon': dashboard2Icon,
         'label': 'Dashboard'
     },
     {
         'route': '/appointments',
-        'icon': 'appoint.svg',
-        'activeIcon': 'appoint2.svg',
+        'icon': appointIcon,
+        'activeIcon': appoint2Icon,
         'label': 'Appointments'
     },
     {
         'route': '/pharmacy',
-        'icon': 'Pharmacy.svg',
-        'activeIcon': 'Pharmacy2.svg',
+        'icon': pharmacyIcon,
+        'activeIcon': pharmacy2Icon,
         'label': 'Pharmacy'
     },
     {
         'route': '/activity',
-        'icon': 'Activity.svg',
-        'activeIcon': 'Activity2.svg',
+        'icon': activityIcon,
+        'activeIcon': activity2Icon,
         'label': 'Activity'
     },
     {
         'route': '/report',
-        'icon': 'Report.svg',
-        'activeIcon': 'Report2.svg',
+        'icon': reportIcon,
+        'activeIcon': report2Icon,
         'label': 'Report'
     },
     {
         'route': '/settings',
-        'icon': 'Settings.svg',
-        'activeIcon': 'Settings2.svg',
+        'icon': settingsIcon,
+        'activeIcon': settings2Icon,
         'label': 'Settings'
     },
 ]

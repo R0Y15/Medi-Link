@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { usePathname } from 'next/navigation';
+import logoutIcon from '@/public/assets/logout.svg';
 // import { SignOutButton, SignedIn, useAuth } from '@clerk/nextjs';
 
 const LeftSidebar = () => {
@@ -32,7 +33,7 @@ const LeftSidebar = () => {
                 }`}
               >
                 <Image
-                  src={`/assets/${isActive ? link.activeIcon : link.icon}`}
+                  src={isActive ? link.activeIcon : link.icon}
                   alt={link.label}
                   width={24}
                   height={24}
@@ -49,7 +50,7 @@ const LeftSidebar = () => {
           {/* <SignOutButton redirectUrl='/sign-in'> */}
           <div className="flex cursor-pointer gap-4 p-4 rounded-lg hover:bg-muted/50">
             <Image
-              src={'/assets/logout.svg'}
+              src={logoutIcon}
               alt='logout'
               width={24}
               height={24}
