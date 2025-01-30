@@ -7,6 +7,7 @@ export const createUser = mutation({
     email: v.string(),
     role: v.string(),
     image: v.optional(v.string()),
+    password: v.string(),
   },
   handler: async (ctx, args) => {
     const userId = await ctx.db.insert("users", {
@@ -14,6 +15,10 @@ export const createUser = mutation({
       email: args.email,
       role: args.role,
       image: args.image,
+      password: args.password,
+      isEmailVerified: false,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
     });
     return userId;
   },

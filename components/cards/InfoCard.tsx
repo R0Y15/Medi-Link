@@ -3,7 +3,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 
 interface InfoCardProps {
-  img?: string;
+  img?: string | React.ReactNode;
   title: string;
   time: string;
   desc?: string;

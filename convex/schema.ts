@@ -7,6 +7,10 @@ export default defineSchema({
     email: v.string(),
     role: v.string(),
     image: v.optional(v.string()),
+    password: v.string(),
+    isEmailVerified: v.boolean(),
+    createdAt: v.number(),
+    updatedAt: v.number(),
   }),
   
   patients: defineTable({
@@ -23,11 +27,43 @@ export default defineSchema({
   }),
 
   appointments: defineTable({
-    patientId: v.id("patients"),
-    doctorId: v.id("users"),
-    date: v.string(),
-    time: v.string(),
-    status: v.string(),
+    appointmentDate: v.string(),
+    doctorName: v.string(),
+    startTime: v.string(),
+    endTime: v.string(),
+    id: v.string(),
     notes: v.optional(v.string()),
+    patientName: v.string(),
+    speciality: v.string(),
+    status: v.string(),
+    symptoms: v.optional(v.string()),
+    type: v.optional(v.string()),
   }),
+
+  medicines: defineTable({
+    category: v.string(),
+    expiryDate: v.string(),
+    id: v.string(),
+    name: v.string(),
+    price: v.number(),
+    status: v.string(),
+    stock: v.number(),
+  }),
+
+  reports: defineTable({
+    title: v.string(),
+    type: v.string(),
+    content: v.string(),
+    fileUrl: v.string(),
+    status: v.string(),
+    createdAt: v.string(),
+    updatedAt: v.string(),
+    aiAnalysis: v.optional(v.object({
+      summary: v.string(),
+      keyFindings: v.array(v.string()),
+      recommendations: v.array(v.string()),
+      needsReview: v.boolean(),
+      confidence: v.number(),
+    })),
+  }).index("by_updated", ["updatedAt"]),
 }); 
