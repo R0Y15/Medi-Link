@@ -10,9 +10,10 @@ import { AppointmentFilters } from '../../../components/appointments/Appointment
 import { NewAppointmentButton } from '../../../components/appointments/NewAppointmentButton';
 import { toast } from 'react-hot-toast';
 import { AppointmentDetailsModal } from '../../../components/appointments/AppointmentDetailsModal';
+import { Id } from '@/convex/_generated/dataModel';
 
 interface Appointment {
-  id: string;
+  _id: Id<"appointments">;
   patientName: string;
   doctorName: string;
   speciality: string;
@@ -49,10 +50,10 @@ const AppointmentsPage = () => {
     fetchAppointments();
   }, [fetchAppointments]);
 
-  const handleReschedule = async (id: string) => {
+  const handleReschedule = async (id: Id<"appointments">) => {
     try {
       // For now, we'll just reschedule to next day at same time
-      const appointment = appointments.find(app => app.id === id);
+      const appointment = appointments.find(app => app._id === id);
       if (!appointment) return;
 
       const currentDate = new Date(appointment.appointmentDate);
@@ -67,7 +68,7 @@ const AppointmentsPage = () => {
     }
   };
 
-  const handleCancel = async (id: string) => {
+  const handleCancel = async (id: Id<"appointments">) => {
     try {
       await cancelAppointment(id);
       toast.success('Appointment cancelled successfully');
@@ -77,8 +78,8 @@ const AppointmentsPage = () => {
     }
   };
 
-  const handleViewDetails = (id: string) => {
-    const appointment = appointments.find(app => app.id === id);
+  const handleViewDetails = (id: Id<"appointments">) => {
+    const appointment = appointments.find(app => app._id === id);
     if (appointment) {
       setSelectedAppointment(appointment);
       setDetailsModalOpen(true);
