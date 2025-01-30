@@ -65,4 +65,22 @@ export default defineSchema({
       confidence: v.number(),
     })),
   }).index("by_updated", ["updatedAt"]),
+
+  activities: defineTable({
+    type: v.string(), // appointment, prescription, report, vaccination, note
+    title: v.string(),
+    description: v.string(),
+    timestamp: v.string(),
+    category: v.string(), // medical, pharmacy, lab, general
+    status: v.string(), // completed, pending, cancelled
+    relatedId: v.optional(v.string()), // ID of related item (appointment, prescription etc)
+    metadata: v.optional(v.object({
+      doctorName: v.optional(v.string()),
+      location: v.optional(v.string()),
+      speciality: v.optional(v.string()),
+      prescription: v.optional(v.array(v.string())),
+      testResults: v.optional(v.array(v.string())),
+      notes: v.optional(v.string()),
+    })),
+  }).index("by_timestamp", ["timestamp"]),
 }); 
