@@ -12,9 +12,9 @@ const page = () => {
 
             {/* Availability */}
             <div className="flex flex-col lg:flex-row gap-2 justify-between items-center">
-                <PatientCard cardTitle="Total Patients" cardDetail="200K" logo="users" color='gray' />
-                <PatientCard cardTitle="Total Staff" cardDetail="120K" logo="staff" color='aqua' />
-                <PatientCard cardTitle="Total Rooms" cardDetail="160K" logo="h-room" color='peach' />
+                <PatientCard cardTitle="My Appointments" cardDetail="5" logo="users" color='gray' />
+                <PatientCard cardTitle="Assigned Doctor(s)" cardDetail="3" logo="staff" color='aqua' />
+                <PatientCard cardTitle="Hospital Visits" cardDetail="60" logo="h-room" color='peach' />
             </div>
 
             {/* Prescription */}
