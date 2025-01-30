@@ -43,10 +43,9 @@ export default defineSchema({
   medicines: defineTable({
     category: v.string(),
     expiryDate: v.string(),
-    id: v.string(),
     name: v.string(),
     price: v.number(),
-    status: v.string(),
+    status: v.union(v.literal("In Stock"), v.literal("Low Stock"), v.literal("Out of Stock")),
     stock: v.number(),
   }),
 

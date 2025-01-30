@@ -1,13 +1,15 @@
-import { Medicine } from "./columns"
 import { PatientCard } from "@/components/cards"
 import { StockDistributionChart } from "./stock-distribution-chart"
+import { useQuery } from "convex/react"
+import { api } from "@/convex/_generated/api"
 
 interface PharmacyOverviewProps {
-  data: Medicine[]
   onFilter: (filter: { field: string, value: string | null }) => void
 }
 
-export function PharmacyOverview({ data, onFilter }: PharmacyOverviewProps) {
+export function PharmacyOverview({ onFilter }: PharmacyOverviewProps) {
+  const data = useQuery(api.medicines.getAll) || []
+
   // Calculate statistics
   const totalMedicines = data.length
   const lowStock = data.filter(med => med.status === "Low Stock").length
@@ -57,7 +59,7 @@ export function PharmacyOverview({ data, onFilter }: PharmacyOverviewProps) {
       </div>
 
       <div className="grid grid-cols-1 gap-5">
-        <StockDistributionChart data={data} />
+        <StockDistributionChart />
       </div>
     </div>
   )

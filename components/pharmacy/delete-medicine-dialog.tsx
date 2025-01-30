@@ -1,6 +1,5 @@
 "use client"
 
-import { API_ENDPOINTS } from "@/constants"
 import { Medicine } from "../pharmacy/columns"
 import {
   AlertDialog,
@@ -12,6 +11,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import { useMutation } from "convex/react"
+import { api } from "@/convex/_generated/api"
+import { toast } from "sonner"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
 
 interface DeleteMedicineDialogProps {
   medicine: Medicine
@@ -26,18 +30,24 @@ export function DeleteMedicineDialog({
   onOpenChange, 
   onSuccess 
 }: DeleteMedicineDialogProps) {
+  const [loading, setLoading] = useState(false)
+  const deleteMedicine = useMutation(api.medicines.remove)
+
   const handleDelete = async () => {
+    setLoading(true)
     try {
-      const response = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.prescriptions}/${medicine.id}`, {
-        method: 'DELETE',
+      await deleteMedicine({
+        id: medicine._id
       })
 
-      if (response.ok) {
-        onOpenChange(false)
-        onSuccess?.()
-      }
+      onOpenChange(false)
+      toast.success("Medicine deleted successfully")
+      onSuccess?.()
     } catch (error) {
       console.error('Failed to delete medicine:', error)
+      toast.error("Failed to delete medicine. Please try again.")
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -51,15 +61,28 @@ export function DeleteMedicineDialog({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel className="bg-muted text-foreground hover:bg-muted/90" onClick={() => onOpenChange(false)}>
+          <AlertDialogCancel 
+            className="bg-muted text-foreground hover:bg-muted/90" 
+            onClick={() => onOpenChange(false)}
+            disabled={loading}
+          >
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction 
-            className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+          <Button
+            variant="destructive"
             onClick={handleDelete}
+            disabled={loading}
+            className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
           >
-            Delete
-          </AlertDialogAction>
+            {loading ? (
+              <>
+                <span className="loading loading-spinner loading-sm mr-2"></span>
+                Deleting...
+              </>
+            ) : (
+              'Delete'
+            )}
+          </Button>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

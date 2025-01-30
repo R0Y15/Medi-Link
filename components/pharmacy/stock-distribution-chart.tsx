@@ -2,13 +2,12 @@
 
 import React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts"
-import { Medicine } from "./columns"
+import { useQuery } from "convex/react"
+import { api } from "@/convex/_generated/api"
 
-interface StockDistributionChartProps {
-  data: Medicine[]
-}
+export function StockDistributionChart() {
+  const data = useQuery(api.medicines.getAll) || []
 
-export function StockDistributionChart({ data }: StockDistributionChartProps) {
   // Process data to group by category
   const categoryData = data.reduce((acc, med) => {
     const category = med.category
