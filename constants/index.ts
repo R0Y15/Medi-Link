@@ -130,3 +130,4 @@ export const API_ENDPOINTS = {
     activity: '/activity',
     settings: '/settings',
 } as const;
+

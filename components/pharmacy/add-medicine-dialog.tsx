@@ -12,7 +12,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Plus } from "lucide-react"
 import { useState } from "react"
-import { API_ENDPOINTS } from "@/constants"
+import { useMutation } from "convex/react"
+import { api } from "@/convex/_generated/api"
+import { toast } from "sonner"
 
 interface AddMedicineDialogProps {
   onSuccess?: () => void
@@ -20,6 +22,7 @@ interface AddMedicineDialogProps {
 
 export function AddMedicineDialog({ onSuccess }: AddMedicineDialogProps) {
   const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     stock: "",
@@ -28,6 +31,8 @@ export function AddMedicineDialog({ onSuccess }: AddMedicineDialogProps) {
     expiryDate: "",
   })
 
+  const createMedicine = useMutation(api.medicines.create)
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target
     setFormData(prev => ({ ...prev, [id]: value }))
@@ -35,37 +40,55 @@ export function AddMedicineDialog({ onSuccess }: AddMedicineDialogProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setLoading(true)
     
     try {
-      const response = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.prescriptions}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: Date.now().toString(),
-          ...formData,
-          stock: parseInt(formData.stock),
-          price: parseFloat(formData.price),
-          status: parseInt(formData.stock) > 50 ? "In Stock" : 
-                 parseInt(formData.stock) > 0 ? "Low Stock" : 
-                 "Out of Stock"
-        }),
+      const stock = parseInt(formData.stock)
+      const price = parseFloat(formData.price)
+
+      // Validate input
+      if (isNaN(stock) || stock < 0) {
+        throw new Error("Stock must be a valid positive number")
+      }
+      if (isNaN(price) || price < 0) {
+        throw new Error("Price must be a valid positive number")
+      }
+      if (!formData.name.trim()) {
+        throw new Error("Name is required")
+      }
+      if (!formData.category.trim()) {
+        throw new Error("Category is required")
+      }
+      if (!formData.expiryDate) {
+        throw new Error("Expiry date is required")
+      }
+
+      await createMedicine({
+        name: formData.name.trim(),
+        stock,
+        category: formData.category.trim(),
+        price,
+        expiryDate: formData.expiryDate,
+        status: stock > 50 ? "In Stock" : 
+                stock > 0 ? "Low Stock" : 
+                "Out of Stock"
       })
 
-      if (response.ok) {
-        setOpen(false)
-        setFormData({
-          name: "",
-          stock: "",
-          category: "",
-          price: "",
-          expiryDate: "",
-        })
-        onSuccess?.()
-      }
+      setOpen(false)
+      setFormData({
+        name: "",
+        stock: "",
+        category: "",
+        price: "",
+        expiryDate: "",
+      })
+      toast.success("Medicine added successfully")
+      onSuccess?.()
     } catch (error) {
       console.error('Failed to save medicine:', error)
+      toast.error(error instanceof Error ? error.message : "Failed to add medicine")
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -159,11 +182,28 @@ export function AddMedicineDialog({ onSuccess }: AddMedicineDialogProps) {
           </div>
           <DialogFooter className="px-8 py-6 bg-muted border-t border-border">
             <div className="flex gap-3 ml-auto">
-              <Button type="button" variant="outline" className="border-input" onClick={() => setOpen(false)}>
+              <Button 
+                type="button" 
+                variant="outline" 
+                className="border-input" 
+                onClick={() => setOpen(false)}
+                disabled={loading}
+              >
                 Cancel
               </Button>
-              <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Save Medicine
+              <Button 
+                type="submit" 
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                disabled={loading}
+              >
+                {loading ? (
+                  <>
+                    <span className="loading loading-spinner loading-sm mr-2"></span>
+                    Saving...
+                  </>
+                ) : (
+                  'Save Medicine'
+                )}
               </Button>
             </div>
           </DialogFooter>

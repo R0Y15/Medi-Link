@@ -1,15 +1,6 @@
 {
   "prescriptions": [
     {
-      "id": "2",
-      "name": "Lisinopril",
-      "stock": 50,
-      "category": "Blood Pressure",
-      "price": 15.5,
-      "expiryDate": "2024-10-15",
-      "status": "Low Stock"
-    },
-    {
       "id": "3",
       "name": "Metformin",
       "stock": 0,

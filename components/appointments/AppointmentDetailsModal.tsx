@@ -6,9 +6,10 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar, User, Stethoscope, FileText } from 'lucide-react';
+import { Id } from '@/convex/_generated/dataModel';
 
 interface Appointment {
-  id: string;
+  _id: Id<"appointments">;
   patientName: string;
   doctorName: string;
   speciality: string;

@@ -13,8 +13,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useState } from "react"
-import { DeleteMedicineDialog } from "../pharmacy/delete-medicine-dialog"
-import { EditMedicineDialog } from "../pharmacy/edit-medicine-dialog"
+import { DeleteMedicineDialog } from "./delete-medicine-dialog"
+import { EditMedicineDialog } from "./edit-medicine-dialog"
+import { Id } from "@/convex/_generated/dataModel"
 
 declare module "@tanstack/react-table" {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -24,21 +25,20 @@ declare module "@tanstack/react-table" {
 }
 
 export type Medicine = {
-  id: string
-  name: string
-  stock: number
-  category: string
-  price: number
-  expiryDate: string
-  status: "In Stock" | "Low Stock" | "Out of Stock"
+  _id: Id<"medicines">;
+  name: string;
+  stock: number;
+  category: string;
+  price: number;
+  expiryDate: string;
+  status: "In Stock" | "Low Stock" | "Out of Stock";
 }
 
 interface ColumnActionsProps {
-  medicine: Medicine
-  onRefresh?: () => void
+  medicine: Medicine;
 }
 
-function ColumnActions({ medicine, onRefresh }: ColumnActionsProps) {
+function ColumnActions({ medicine }: ColumnActionsProps) {
   const [editDialogOpen, setEditDialogOpen] = useState(false)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -55,7 +55,7 @@ function ColumnActions({ medicine, onRefresh }: ColumnActionsProps) {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel className="font-semibold">Actions</DropdownMenuLabel>
           <DropdownMenuItem onClick={() => {
-            navigator.clipboard.writeText(medicine.id)
+            navigator.clipboard.writeText(medicine._id)
             setDropdownOpen(false)
           }}>
             Copy medicine ID
@@ -82,13 +82,11 @@ function ColumnActions({ medicine, onRefresh }: ColumnActionsProps) {
         medicine={medicine}
         open={editDialogOpen}
         onOpenChange={setEditDialogOpen}
-        onSuccess={onRefresh}
       />
       <DeleteMedicineDialog
         medicine={medicine}
         open={deleteDialogOpen}
         onOpenChange={setDeleteDialogOpen}
-        onSuccess={onRefresh}
       />
     </>
   )
@@ -176,9 +174,9 @@ export const columns: ColumnDef<Medicine>[] = [
   },
   {
     id: "actions",
-    cell: ({ row, table }) => {
-      const medicine = row.original
-      return <ColumnActions medicine={medicine} onRefresh={table.options.meta?.onRefresh} />
+    cell: ({ row }) => {
+      const medicine = row.original;
+      return <ColumnActions medicine={medicine} />;
     },
   },
 ] 

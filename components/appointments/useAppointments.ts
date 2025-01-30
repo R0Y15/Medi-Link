@@ -1,8 +1,9 @@
 import { useState, useCallback } from 'react';
-import { API_ENDPOINTS } from '@/constants';
+import { useAppointments as useConvexAppointments } from '@/hooks/useAppointments';
+import { Id } from '@/convex/_generated/dataModel';
 
-interface Appointment {
-  id: string;
+export interface Appointment {
+  _id: Id<"appointments">;
   patientName: string;
   doctorName: string;
   speciality: string;
@@ -10,9 +11,9 @@ interface Appointment {
   startTime: string;
   endTime: string;
   status: string;
-  symptoms: string;
-  notes: string;
-  type: string;
+  symptoms?: string;
+  notes?: string;
+  type?: string;
 }
 
 interface NewAppointment {
@@ -24,25 +25,13 @@ interface NewAppointment {
 }
 
 export function useAppointments() {
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const convexAppointments = useConvexAppointments();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [filter, setFilter] = useState<string>('all');
 
-  const fetchAppointments = useCallback(async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.appointments}`);
-      const data = await response.json();
-      setAppointments(data);
-      setError(null);
-    } catch (error) {
-      console.error('Error fetching appointments:', error);
-      setError(error instanceof Error ? error.message : 'An error occurred');
-    } finally {
-      setLoading(false);
-    }
+  // No need for fetchAppointments as Convex automatically syncs data
+  const fetchAppointments = useCallback(() => {
+    // This is now a no-op as Convex handles data syncing
   }, []);
 
   const createAppointment = async (newAppointment: NewAppointment) => {
@@ -51,93 +40,49 @@ export function useAppointments() {
       const startTime = `${hours}:${minutes}`;
       const endTime = `${parseInt(hours) + 1}:${minutes}`;
 
-      const appointmentToCreate = {
+      return await convexAppointments.createAppointment({
         doctorName: newAppointment.doctorName,
         speciality: newAppointment.speciality,
         appointmentDate: newAppointment.date.toISOString().split('T')[0],
         startTime,
         endTime,
+        patientName: "Test Patient", // TODO: Get from auth context
         status: 'upcoming',
         notes: newAppointment.notes,
-      };
-
-      const response = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.appointments}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(appointmentToCreate),
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to create appointment');
-      }
-
-      const createdAppointment = await response.json();
-      setAppointments(prev => [...prev, createdAppointment]);
-      return createdAppointment;
     } catch (error) {
       console.error('Error creating appointment:', error);
       throw error;
     }
   };
 
-  const cancelAppointment = async (id: string) => {
+  const cancelAppointment = async (id: Id<"appointments">) => {
     try {
-      const response = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.appointments}/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ status: 'cancelled' }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to cancel appointment');
-      }
-
-      setAppointments(prev =>
-        prev.map(app =>
-          app.id === id ? { ...app, status: 'cancelled' } : app
-        )
-      );
+      await convexAppointments.updateAppointment(id, { status: 'cancelled' });
     } catch (error) {
       console.error('Error cancelling appointment:', error);
       throw error;
     }
   };
 
-  const rescheduleAppointment = async (id: string, newDate: Date, newTime: string) => {
+  const rescheduleAppointment = async (id: Id<"appointments">, newDate: Date, newTime: string) => {
     try {
       const [hours, minutes] = newTime.split(':');
       const startTime = `${hours}:${minutes}`;
       const endTime = `${parseInt(hours) + 1}:${minutes}`;
 
-      const response = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.appointments}/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          appointmentDate: newDate.toISOString().split('T')[0],
-          startTime,
-          endTime,
-        }),
+      await convexAppointments.updateAppointment(id, {
+        appointmentDate: newDate.toISOString().split('T')[0],
+        startTime,
+        endTime,
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to reschedule appointment');
-      }
-
-      const updatedAppointment = await response.json();
-      setAppointments(prev =>
-        prev.map(app => (app.id === id ? updatedAppointment : app))
-      );
     } catch (error) {
       console.error('Error rescheduling appointment:', error);
       throw error;
     }
   };
+
+  const appointments = convexAppointments.appointments || [];
 
   const filteredAppointments = appointments.filter(appointment => {
     if (filter === 'all') return true;
@@ -164,8 +109,8 @@ export function useAppointments() {
     todaysAppointments,
     upcomingAppointments,
     selectedDateAppointments,
-    loading,
-    error,
+    loading: false, // Convex handles loading states
+    error: null, // Convex handles errors
     selectedDate,
     setSelectedDate,
     filter,

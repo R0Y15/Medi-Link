@@ -8,9 +8,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MoreVertical, Clock } from 'lucide-react';
+import { Id } from '@/convex/_generated/dataModel';
 
 interface Appointment {
-  id: string;
+  _id: Id<"appointments">;
   doctorName: string;
   speciality: string;
   startTime: string;
@@ -20,9 +21,9 @@ interface Appointment {
 
 interface AppointmentCardProps {
   appointment: Appointment;
-  onReschedule?: (id: string) => void;
-  onCancel?: (id: string) => void;
-  onViewDetails?: (id: string) => void;
+  onReschedule?: (id: Id<"appointments">) => void;
+  onCancel?: (id: Id<"appointments">) => void;
+  onViewDetails?: (id: Id<"appointments">) => void;
 }
 
 export function AppointmentCard({ 
@@ -75,19 +76,19 @@ export function AppointmentCard({
           <DropdownMenuContent align="end" className="w-[160px]">
             <DropdownMenuItem 
               className="cursor-pointer"
-              onClick={() => onReschedule?.(appointment.id)}
+              onClick={() => onReschedule?.(appointment._id)}
             >
               Reschedule
             </DropdownMenuItem>
             <DropdownMenuItem 
               className="cursor-pointer"
-              onClick={() => onViewDetails?.(appointment.id)}
+              onClick={() => onViewDetails?.(appointment._id)}
             >
               View Details
             </DropdownMenuItem>
             <DropdownMenuItem 
               className="cursor-pointer text-red-500 focus:text-red-500"
-              onClick={() => onCancel?.(appointment.id)}
+              onClick={() => onCancel?.(appointment._id)}
             >
               Cancel
             </DropdownMenuItem>

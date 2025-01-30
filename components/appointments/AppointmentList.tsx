@@ -1,9 +1,10 @@
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { AppointmentCard } from './AppointmentCard';
+import { Id } from '@/convex/_generated/dataModel';
 
 interface Appointment {
-  id: string;
+  _id: Id<"appointments">;
   doctorName: string;
   speciality: string;
   startTime: string;
@@ -14,9 +15,9 @@ interface Appointment {
 interface AppointmentListProps {
   appointments: Appointment[];
   loading: boolean;
-  onReschedule: (id: string) => void;
-  onCancel: (id: string) => void;
-  onViewDetails: (id: string) => void;
+  onReschedule: (id: Id<"appointments">) => void;
+  onCancel: (id: Id<"appointments">) => void;
+  onViewDetails: (id: Id<"appointments">) => void;
 }
 
 export function AppointmentList({ 
@@ -61,7 +62,7 @@ export function AppointmentList({
     <div className="flex-[0.7] space-y-4">
       {appointments.map((appointment) => (
         <AppointmentCard
-          key={appointment.id}
+          key={appointment._id}
           appointment={appointment}
           onReschedule={onReschedule}
           onCancel={onCancel}

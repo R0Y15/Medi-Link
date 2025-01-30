@@ -6,6 +6,8 @@ import { InfoCard, VaccineCards } from "../cards";
 import { API_ENDPOINTS } from "@/constants";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 interface Appointment {
   id: string;
@@ -26,31 +28,30 @@ interface Vaccination {
 
 const RightSidebar = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
-  const [todayAppointments, setTodayAppointments] = useState<Appointment[]>([]);
   const [vaccinations, setVaccinations] = useState<Vaccination[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch appointments
-        const appointmentsRes = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.appointments}`);
-        const appointmentsData = await appointmentsRes.json();
-        const today = new Date().toISOString().split('T')[0];
-        const todayAppts = appointmentsData.filter((apt: Appointment) => 
-          apt.appointmentDate === today
-        );
-        setTodayAppointments(todayAppts);
+  // Fetch all appointments using Convex
+  const appointments = useQuery(api.appointments.getAll);
+  
+  // Filter today's appointments
+  const todayAppointments = appointments?.filter((apt) => {
+    const today = new Date().toISOString().split('T')[0];
+    return apt.appointmentDate === today;
+  }) || [];
 
-        // Fetch vaccinations
+  // Fetch vaccinations (keeping this as is for now)
+  useEffect(() => {
+    const fetchVaccinations = async () => {
+      try {
         const vaccinationsRes = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.vaccinations}`);
         const vaccinationsData = await vaccinationsRes.json();
         setVaccinations(vaccinationsData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching vaccinations:', error);
       }
     };
 
-    fetchData();
+    fetchVaccinations();
   }, []);
 
   return (
