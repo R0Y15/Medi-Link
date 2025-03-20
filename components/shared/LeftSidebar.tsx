@@ -12,6 +12,7 @@ const LeftSidebar = () => {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   // const { userId } = useAuth();
+  const isReportPage = pathname.includes('/report');
 
   // Add responsive handling
   useEffect(() => {
@@ -30,7 +31,7 @@ const LeftSidebar = () => {
   }, []);
 
   return (
-    <section className='custom-scrollbar leftsidebar'>
+    <section className={`custom-scrollbar leftsidebar ${!isReportPage ? 'overflow-auto' : 'overflow-hidden'}`}>
       <div className='flex flex-1 flex-col bg-card rounded-2xl py-5 shadow-sm w-full'>
         <div className="flex w-full flex-1 flex-col gap-4 px-6 rounded-2xl">
           <h1 className='font-semibold hidden lg:block lg:text-[20px] my-3 px-4 text-foreground'>Menu</h1>

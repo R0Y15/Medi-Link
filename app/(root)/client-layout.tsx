@@ -32,10 +32,10 @@ export default function ClientLayout({
     }, []);
 
     return (
-        <main className="flex flex-row bg-[hsl(var(--background-darker))] h-screen overflow-hidden">
+        <main className="flex flex-row bg-[hsl(var(--background-darker))] h-screen">
             <LeftSidebar />
-            <section className={`main-container flex-1 ${isPharmacyPage ? 'pl-2 pr-2 md:pl-4 md:pr-4' : ''} ${isReportPage ? 'overflow-hidden' : ''}`}>
-                <div className="w-full h-full">
+            <section className={`main-container flex-1 custom-scrollbar ${isPharmacyPage ? 'pl-2 pr-2 md:pl-4 md:pr-4' : ''} ${isReportPage ? 'overflow-hidden' : 'overflow-auto'}`}>
+                <div className={`w-full ${isReportPage ? 'h-full' : ''}`}>
                     {children}
                 </div>
             </section>

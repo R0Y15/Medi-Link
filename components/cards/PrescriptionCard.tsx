@@ -17,11 +17,25 @@ const chartConfig = {
   }
 } satisfies ChartConfig
 
-const PrescriptionCard = () => {
-  const slicedChartData = chartData.slice(0, 5);
+interface PrescriptionCardProps {
+  data?: {
+    months: string[];
+    values: number[];
+  }
+}
+
+const PrescriptionCard = ({ data }: PrescriptionCardProps) => {
+  // Use provided data or fallback to default
+  const slicedChartData = data 
+    ? data.months.map((month, index) => ({
+        month,
+        desktop: data.values[index]
+      }))
+    : chartData.slice(0, 5);
+
   return (
-    <div className="flex flex-col w-full">
-      <ChartContainer config={chartConfig} className="lg:min-h-[300px] w-full">
+    <div className="flex flex-col w-full h-full">
+      <ChartContainer config={chartConfig} className="h-[280px] w-full">
         <BarChart accessibilityLayer data={slicedChartData} barCategoryGap={'25%'}>
           <defs>
             <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">

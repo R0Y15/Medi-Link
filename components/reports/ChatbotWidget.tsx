@@ -36,7 +36,7 @@ export const ChatbotWidget = () => {
         </div>
         
         {/* Chat Content */}
-        <div className="relative flex-grow overflow-hidden h-full flex flex-col">
+        <div className="relative flex-grow overflow-hidden h-full flex flex-col top-2.5">
           {isLoading && (
             <div className="absolute inset-0 p-4 space-y-4">
               <Skeleton className="h-12 w-3/4" />
