@@ -28,15 +28,15 @@ export const ChatbotWidget = () => {
   };
 
   return (
-    <div className="relative bg-card rounded-xl shadow-sm overflow-hidden w-full border border-border h-full">
+    <div className="relative bg-card rounded-xl shadow-sm overflow-hidden w-full h-full border border-border max-h-full">
       <div className="flex flex-col h-full">
-        {/* Minimalist Chat Header */}
-        {/* <div className="py-3 px-4 border-b border-border bg-transparent flex items-center">
+        {/* Header - can be uncommented if needed */}
+        <div className="py-2 px-3 border-b border-border bg-transparent flex items-center">
           <h3 className="text-sm font-medium">AI Chat Support</h3>
-        </div> */}
-
+        </div>
+        
         {/* Chat Content */}
-        <div className="relative flex-grow overflow-hidden">
+        <div className="relative flex-grow overflow-hidden h-full flex flex-col">
           {isLoading && (
             <div className="absolute inset-0 p-4 space-y-4">
               <Skeleton className="h-12 w-3/4" />
@@ -57,7 +57,7 @@ export const ChatbotWidget = () => {
               height="100%"
               frameBorder="0"
               scrolling="no"
-              className="w-full h-full bg-background"
+              className="w-full h-full flex-grow bg-background"
               onLoad={handleIframeLoad}
               onError={handleIframeError}
               style={{ overflow: 'hidden' }}
