@@ -312,7 +312,7 @@ const ReportsPage = () => {
         </div>
 
         {/* Chatbot Section */}
-        <div className="w-[400px] rounded-xl border bg-card">
+        <div className="w-[360px] h-full">
           <ChatbotWidget />
         </div>
       </div>
