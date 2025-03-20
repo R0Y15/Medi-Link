@@ -19,6 +19,11 @@ export interface PatientCardProps {
     cardDetail: string;
     logo: string;
     color: string;
+    detailedInfo?: Array<{
+        title: string;
+        value: string;
+        icon?: string;
+    }>;
 }
 
 export interface InfoCardprops {

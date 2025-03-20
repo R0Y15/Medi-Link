@@ -22,42 +22,41 @@ export function PharmacyOverview({ onFilter }: PharmacyOverviewProps) {
   }).length
 
   return (
-    <div className="flex flex-col gap-5 mb-6">
-      <div className="flex flex-col lg:flex-row gap-2 justify-between items-center">
+    <div className="flex flex-col gap-5 mb-6 w-full px-2 sm:px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full">
         <PatientCard 
           cardTitle="Total Medicines" 
           cardDetail={totalMedicines.toString()} 
           logo="medicine" 
           color="aqua" 
-          onViewDetails={() => onFilter({ field: 'status', value: null })}
-        />
-        <PatientCard 
-          cardTitle="Low Stock Items" 
-          cardDetail={lowStock.toString()} 
-          logo="alert" 
-          color="aqua" 
-          onViewDetails={() => onFilter({ field: 'status', value: 'Low Stock' })}
-        />
-        <PatientCard 
-          cardTitle="Out of Stock" 
-          cardDetail={outOfStock.toString()} 
-          logo="error" 
-          color="peach" 
-          onViewDetails={() => onFilter({ field: 'status', value: 'Out of Stock' })}
+          onViewDetails={() => onFilter({ field: "", value: null })}
         />
         <PatientCard 
           cardTitle="Expiring Soon" 
           cardDetail={expiringCount.toString()} 
-          logo="clock" 
-          color="aqua" 
+          logo="calendar" 
+          color="pink" 
           onViewDetails={() => {
-            const threeMonthsFromNow = new Date()
-            threeMonthsFromNow.setMonth(threeMonthsFromNow.getMonth() + 3)
-            onFilter({ field: 'expiryDate', value: threeMonthsFromNow.toISOString() })
+            // We'll filter by medicines expiring within 3 months in the UI
+            onFilter({ field: "expiryDate", value: "soon" })
           }}
         />
+        <PatientCard 
+          cardTitle="Low Stock" 
+          cardDetail={lowStock.toString()} 
+          logo="warning" 
+          color="yellow" 
+          onViewDetails={() => onFilter({ field: "status", value: "Low Stock" })}
+        />
+        <PatientCard 
+          cardTitle="Out of Stock" 
+          cardDetail={outOfStock.toString()} 
+          logo="alert" 
+          color="red" 
+          onViewDetails={() => onFilter({ field: "status", value: "Out of Stock" })}
+        />
       </div>
-
+      
       <div className="grid grid-cols-1 gap-5">
         <StockDistributionChart />
       </div>

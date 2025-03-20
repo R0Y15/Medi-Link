@@ -15,10 +15,10 @@ export default function PharmacyPage() {
   // Show loading state while data is being fetched
   if (medicines === undefined) {
     return (
-      <div className="flex-1 w-full space-y-6">
-        <div className="flex flex-col lg:flex-row gap-2 justify-between items-center">
+      <div className="w-full space-y-6 p-2 sm:p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-[120px] w-full lg:w-[250px]" />
+            <Skeleton key={i} className="h-[120px]" />
           ))}
         </div>
         <Skeleton className="h-[400px] w-full" />
@@ -37,19 +37,21 @@ export default function PharmacyPage() {
     : medicines;
 
   return (
-    <div className="flex-1 w-full space-y-6">
+    <div className="w-full space-y-6">
       <PharmacyOverview 
         onFilter={(newFilter) => setFilter(newFilter)} 
       />
-      <DataTable 
-        columns={columns} 
-        data={filteredData}
-        filter={filter}
-        onRefresh={() => {
-          // No need to manually refresh since Convex will automatically update the UI
-          // when the data changes in the backend
-        }}
-      />
+      <div className="px-2 sm:px-4">
+        <DataTable 
+          columns={columns} 
+          data={filteredData}
+          filter={filter}
+          onRefresh={() => {
+            // No need to manually refresh since Convex will automatically update the UI
+            // when the data changes in the backend
+          }}
+        />
+      </div>
     </div>
   )
 }

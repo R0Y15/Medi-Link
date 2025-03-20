@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { ChatbotWidget } from '@/components/reports/ChatbotWidget';
 import { ReportPreviewModal } from '@/components/reports/ReportPreviewModal';
 import { Button } from '@/components/ui/button';
@@ -125,6 +125,23 @@ const ReportsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Add responsive handling
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    // Initial check
+    checkScreenSize();
+    
+    // Listen for window resize
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const formatDate = (timestamp: number) => {
     return new Date(timestamp).toLocaleDateString('en-US', {
@@ -186,22 +203,22 @@ const ReportsPage = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-7rem)] flex flex-col">
-      <div className="flex items-center justify-between mb-6">
+    <div className="h-full max-h-[calc(100vh-7rem)] flex flex-col overflow-hidden">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 sm:mb-6">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight">Medical Reports</h2>
           <p className="text-sm text-muted-foreground">
             View and manage your medical reports
           </p>
         </div>
-        <Button onClick={() => setIsUploadOpen(true)} className="gap-2">
+        <Button onClick={() => setIsUploadOpen(true)} className="gap-2 w-full sm:w-auto">
           <Upload className="h-4 w-4" />
           Upload Report
         </Button>
       </div>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4 sm:mb-6">
         <InfoCard
           img={<FileText className="h-5 w-5" />}
           title="Total Reports"
@@ -227,12 +244,12 @@ const ReportsPage = () => {
         />
       </div>
 
-      <div className="flex-1 min-h-0 flex gap-6">
+      <div className="flex-1 min-h-0 flex flex-col lg:flex-row gap-4">
         {/* Reports List Section */}
         <div className="flex-1 overflow-hidden rounded-xl border bg-card">
           <div className="h-full flex flex-col">
             {/* Search and Filters */}
-            <div className="flex gap-4 p-6 pb-0">
+            <div className="flex flex-col sm:flex-row gap-3 p-4">
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
@@ -242,35 +259,37 @@ const ReportsPage = () => {
                   className="pl-9"
                 />
               </div>
-              <Select value={selectedType} onValueChange={setSelectedType}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Report Type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Types</SelectItem>
-                  <SelectItem value="laboratory">Laboratory</SelectItem>
-                  <SelectItem value="radiology">Radiology</SelectItem>
-                  <SelectItem value="prescription">Prescription</SelectItem>
-                  <SelectItem value="vaccination">Vaccination</SelectItem>
-                </SelectContent>
-              </Select>
-              <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Status" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Status</SelectItem>
-                  <SelectItem value="Normal">Normal</SelectItem>
-                  <SelectItem value="Review Required">Review Required</SelectItem>
-                </SelectContent>
-              </Select>
+              <div className="flex gap-3 flex-col sm:flex-row">
+                <Select value={selectedType} onValueChange={setSelectedType}>
+                  <SelectTrigger className="w-full sm:w-[140px]">
+                    <SelectValue placeholder="Report Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Types</SelectItem>
+                    <SelectItem value="laboratory">Laboratory</SelectItem>
+                    <SelectItem value="radiology">Radiology</SelectItem>
+                    <SelectItem value="prescription">Prescription</SelectItem>
+                    <SelectItem value="vaccination">Vaccination</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select value={selectedStatus} onValueChange={setSelectedStatus}>
+                  <SelectTrigger className="w-full sm:w-[140px]">
+                    <SelectValue placeholder="Status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Status</SelectItem>
+                    <SelectItem value="Normal">Normal</SelectItem>
+                    <SelectItem value="Review Required">Review Required</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {/* Reports List */}
-            <div className="flex-1 overflow-y-auto p-6 pt-4">
-              <div className="space-y-4">
+            <div className="flex-1 overflow-y-auto p-4">
+              <div className="space-y-3">
                 {isLoading ? (
-                  <div className="text-center py-10">
+                  <div className="text-center py-8">
                     <div className="animate-spin h-10 w-10 mx-auto mb-4">
                       <FileText className="text-muted-foreground" />
                     </div>
@@ -289,7 +308,7 @@ const ReportsPage = () => {
                     ))}
                   </AnimatePresence>
                 ) : (
-                  <div className="text-center py-10">
+                  <div className="text-center py-8">
                     <FileText className="h-10 w-10 mx-auto mb-4 text-muted-foreground" />
                     <h3 className="font-medium mb-1">No reports found</h3>
                     <p className="text-sm text-muted-foreground mb-4">
@@ -311,10 +330,12 @@ const ReportsPage = () => {
           </div>
         </div>
 
-        {/* Chatbot Section */}
-        <div className="w-[400px] rounded-xl border bg-card">
-          <ChatbotWidget />
-        </div>
+        {/* Chatbot Section - Only show on larger screens or conditionally on mobile */}
+        {(!isMobile || false) && (
+          <div className="lg:w-[360px] w-full h-auto lg:h-full">
+            <ChatbotWidget />
+          </div>
+        )}
       </div>
 
       {/* Modals */}

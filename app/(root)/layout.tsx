@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import "../globals.css";
 import { Footer, Navbar } from "@/components/shared";
 import ClientLayout from "./client-layout";
 
@@ -16,14 +15,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-                <Navbar />
-                <ClientLayout>
-                    {children}
-                </ClientLayout>
-                <Footer />
-            </body>
-        </html>
+        <>
+            <Navbar />
+            <ClientLayout>
+                {children}
+            </ClientLayout>
+            <Footer />
+        </>
     );
 }
