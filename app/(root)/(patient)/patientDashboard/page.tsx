@@ -1,6 +1,6 @@
 "use client";
 
-import { InfoCard, PatientCard, PatientStatisticsCard, PrescriptionCard, StatCard } from "@/components/cards";
+import { InfoCard, PatientCard, PatientStatisticsCard, PrescriptionCard, StatCard, MedicinesDialog } from "@/components/cards";
 import { useDashboard } from "@/hooks/useDashboard";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useUser } from "@clerk/nextjs";
@@ -132,7 +132,17 @@ const PatientDashboardPage = () => {
 
                 {/* Medicine RunsOut */}
                 <div className="flex flex-col w-full lg:w-1/2 bg-card rounded-xl shadow-sm p-5 gap-3 h-full border">
-                    <h1 className="text-body2-bold text-foreground">Medicine Runs Out</h1>
+                    <div className="flex justify-between items-center">
+                        <h1 className="text-body2-bold text-foreground">Medicine Runs Out</h1>
+                        <MedicinesDialog 
+                            medicines={data?.medicines?.map(med => ({
+                                ...med,
+                                status: med.id === 1 ? 'Low Stock' : 'In Stock'
+                            })) || []} 
+                            title="Medicine Inventory" 
+                            description="Complete details of your medicine inventory with stock status" 
+                        />
+                    </div>
                     <div className="flex-1 grid grid-cols-2 gap-2 overflow-y-auto pr-1 content-start">
                         {data?.medicines.map((item) => (
                             <InfoCard 
