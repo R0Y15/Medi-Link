@@ -4,6 +4,7 @@ import PatientStatisticsCard from "./PatientStatisticsCard";
 import PrescriptionCard from "./PrescriptionCard";
 import VaccineCards from "./VaccineCards";
 import StatCard from "./StatCard";
+import { MedicinesDialog } from "./MedicinesDialog";
 
 export {
     VaccineCards,
@@ -11,5 +12,6 @@ export {
     InfoCard,
     PrescriptionCard,
     PatientCard,
-    StatCard
+    StatCard,
+    MedicinesDialog
 }

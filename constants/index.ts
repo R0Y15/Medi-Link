@@ -126,7 +126,7 @@ export const vaccines = [
 ];
 
 export const API_ENDPOINTS = {
-    baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001',
+    baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
     user: '/user',
     stats: '/stats',
     prescriptions: '/prescriptions',

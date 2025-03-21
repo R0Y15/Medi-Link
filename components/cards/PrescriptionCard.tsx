@@ -9,6 +9,9 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 import { chartData } from '@/constants'
+import { Button } from "@/components/ui/button"
+import { FileText } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 const chartConfig = {
   desktop: {
@@ -25,6 +28,8 @@ interface PrescriptionCardProps {
 }
 
 const PrescriptionCard = ({ data }: PrescriptionCardProps) => {
+  const router = useRouter();
+  
   // Use provided data or fallback to default
   const slicedChartData = data 
     ? data.months.map((month, index) => ({
@@ -35,7 +40,19 @@ const PrescriptionCard = ({ data }: PrescriptionCardProps) => {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <ChartContainer config={chartConfig} className="h-[280px] w-full">
+      <div className="flex justify-between items-center mb-2">
+        <div className="text-sm text-muted-foreground">Monthly Overview</div>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="gap-1 text-xs"
+          onClick={() => router.push('/report')}
+        >
+          <FileText className="h-3.5 w-3.5" />
+          View Reports
+        </Button>
+      </div>
+      <ChartContainer config={chartConfig} className="h-[240px] w-full">
         <BarChart accessibilityLayer data={slicedChartData} barCategoryGap={'25%'}>
           <defs>
             <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
