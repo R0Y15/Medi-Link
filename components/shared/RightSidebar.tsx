@@ -3,7 +3,7 @@
 import { Calendar } from "@/components/ui/calendar"
 import React, { useEffect, useState } from 'react'
 import { InfoCard, VaccineCards } from "../cards";
-import { API_ENDPOINTS } from "@/constants";
+import { API_ENDPOINTS, vaccines } from "@/constants";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { useQuery } from "convex/react";
@@ -19,11 +19,11 @@ interface Appointment {
 }
 
 interface Vaccination {
-  id: string;
+  id?: string;
   name: string;
   date: string;
-  dose: string;
-  location: string;
+  dose?: string;
+  location?: string;
 }
 
 const RightSidebar = () => {
@@ -39,19 +39,15 @@ const RightSidebar = () => {
     return apt.appointmentDate === today;
   }) || [];
 
-  // Fetch vaccinations (keeping this as is for now)
+  // Use hardcoded vaccines data instead of making API call
   useEffect(() => {
-    const fetchVaccinations = async () => {
-      try {
-        const vaccinationsRes = await fetch(`${API_ENDPOINTS.baseUrl}${API_ENDPOINTS.vaccinations}`);
-        const vaccinationsData = await vaccinationsRes.json();
-        setVaccinations(vaccinationsData);
-      } catch (error) {
-        console.error('Error fetching vaccinations:', error);
-      }
-    };
-
-    fetchVaccinations();
+    // Use the hardcoded vaccines data from constants
+    setVaccinations(vaccines.map(vaccine => ({
+      name: vaccine.name,
+      date: vaccine.date,
+      dose: "1st Dose",
+      location: "General Hospital"
+    })));
   }, []);
 
   return (
@@ -91,13 +87,14 @@ const RightSidebar = () => {
               <Image
                 src={'/assets/x-dots.svg'}
                 width={20}
-                height={10}
+                height={20}
                 alt="more"
                 className="brightness-0 dark:brightness-200 dark:invert"
+                style={{ height: "auto" }}
               />
             </Button>
           </div>
-          <div className="h-12 overflow-auto no-scrollbar">
+          <div className="h-52 overflow-auto no-scrollbar">
             {vaccinations.map((vaccine, index) => (
               <VaccineCards key={index} title={vaccine.name} date={vaccine.date} />
             ))}

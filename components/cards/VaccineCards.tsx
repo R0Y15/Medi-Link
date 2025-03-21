@@ -31,8 +31,9 @@ const VaccineCards = ({ title, date }: VaccineProps) => {
               <Image
                 src={'/assets/dots.svg'}
                 width={20}
-                height={10}
+                height={20}
                 alt="more"
+                style={{ height: "auto" }}
               />
             </Button>
           </div>
