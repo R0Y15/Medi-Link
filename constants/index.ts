@@ -13,6 +13,8 @@ import reportIcon from '@/public/assets/report.svg';
 import report2Icon from '@/public/assets/report2.svg';
 import settingsIcon from '@/public/assets/settings.svg';
 import settings2Icon from '@/public/assets/settings2.svg';
+import bloodBankIcon from '@/public/assets/bloodBankIcon.svg';
+import bloodBank2Icon from '@/public/assets/bloodBank2Icon.svg';
 
 export interface PatientCardProps {
     cardTitle: string;
@@ -57,6 +59,12 @@ export const sidebarLinks = [
         'icon': pharmacyIcon,
         'activeIcon': pharmacy2Icon,
         'label': 'Pharmacy'
+    },
+    {
+        'route': '/blood-bank',
+        'icon': bloodBankIcon,
+        'activeIcon': bloodBank2Icon,
+        'label': 'Blood Bank'
     },
     {
         'route': '/activity',
