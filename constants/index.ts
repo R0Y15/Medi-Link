@@ -15,6 +15,8 @@ import settingsIcon from '@/public/assets/settings.svg';
 import settings2Icon from '@/public/assets/settings2.svg';
 import bloodBankIcon from '@/public/assets/bloodBankIcon.svg';
 import bloodBank2Icon from '@/public/assets/bloodBank2Icon.svg';
+import ambulanceIcon from '@/public/assets/ambulance.svg';
+import ambulance2Icon from '@/public/assets/ambulance2.svg';
 
 export interface PatientCardProps {
     cardTitle: string;
@@ -65,6 +67,12 @@ export const sidebarLinks = [
         'icon': bloodBankIcon,
         'activeIcon': bloodBank2Icon,
         'label': 'Blood Bank'
+    },
+    {
+        'route': '/ambulance',
+        'icon': ambulanceIcon,
+        'activeIcon': ambulance2Icon,
+        'label': 'Ambulance'
     },
     {
         'route': '/activity',
