@@ -108,38 +108,38 @@ const PatientCard = ({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <div className={`flex flex-col p-4 min-w-64 w-full h-full rounded-2xl shadow-sm ${getCardStyle(color)} cursor-pointer hover:shadow-md transition-shadow`}>
-          <div className="flex flex-row gap-2">
-            <div className={`flex p-2 ml-2 w-14 h-14 rounded-full shadow-sm items-center justify-center ${getIconBackground(color)}`}>
+        <div className={`flex flex-col p-3 sm:p-4 w-full h-full rounded-2xl shadow-sm ${getCardStyle(color)} cursor-pointer hover:shadow-md transition-shadow`}>
+          <div className="flex flex-row gap-2 items-center">
+            <div className={`flex p-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-sm items-center justify-center ${getIconBackground(color)}`}>
               <Image
                 src={`/assets/${logo}.svg`}
-                width={30}
-                height={30}
+                width={28}
+                height={28}
                 alt='users'
                 className={`${color === 'gray' ? 'opacity-70' : ''}`}
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <h3 className={`text-small-semibold lg:text-base-semibold ${getTextColor(color)}`}>
+            <div className="flex flex-col gap-1 sm:gap-2">
+              <h3 className={`text-xs sm:text-sm lg:text-base-semibold ${getTextColor(color)}`}>
                 {cardTitle}
               </h3>
-              <h1 className={`text-body-semibold ${getTextColor(color)}`}>
+              <h1 className={`text-lg sm:text-xl ${getTextColor(color)}`}>
                 {cardDetail}
               </h1>
             </div>
           </div>
 
           <div 
-            className="flex flex-row mt-auto pt-6 gap-2 justify-start items-center cursor-pointer group"
+            className="flex flex-row mt-2 pt-3 sm:mt-auto sm:pt-5 gap-2 justify-start items-center cursor-pointer group"
           >
-            <h1 className={`text-small-semibold ${getTextColor(color)} group-hover:opacity-90 transition-opacity`}>
+            <h1 className={`text-xs sm:text-sm ${getTextColor(color)} group-hover:opacity-90 transition-opacity`}>
               View details
             </h1>
             <div className="transform transition-transform group-hover:translate-x-3">
               <Image
                 src={'/assets/arrow-r.svg'}
-                width={20}
-                height={20}
+                width={16}
+                height={16}
                 alt='arrow'
                 className={`${getTextColor(color).includes('dark:text') ? 'dark:invert' : ''} opacity-90 group-hover:opacity-100`}
               />

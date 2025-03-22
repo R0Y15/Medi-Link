@@ -22,8 +22,8 @@ export function PharmacyOverview({ onFilter }: PharmacyOverviewProps) {
   }).length
 
   return (
-    <div className="flex flex-col gap-5 mb-6 w-full px-2 sm:px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full">
+    <div className="flex flex-col gap-4 sm:gap-5 px-2">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
         <PatientCard 
           cardTitle="Total Medicines" 
           cardDetail={totalMedicines.toString()} 
@@ -34,7 +34,7 @@ export function PharmacyOverview({ onFilter }: PharmacyOverviewProps) {
         <PatientCard 
           cardTitle="Expiring Soon" 
           cardDetail={expiringCount.toString()} 
-          logo="calendar" 
+          logo="clock" 
           color="pink" 
           onViewDetails={() => {
             // We'll filter by medicines expiring within 3 months in the UI
@@ -44,22 +44,20 @@ export function PharmacyOverview({ onFilter }: PharmacyOverviewProps) {
         <PatientCard 
           cardTitle="Low Stock" 
           cardDetail={lowStock.toString()} 
-          logo="warning" 
+          logo="alert" 
           color="yellow" 
           onViewDetails={() => onFilter({ field: "status", value: "Low Stock" })}
         />
         <PatientCard 
           cardTitle="Out of Stock" 
           cardDetail={outOfStock.toString()} 
-          logo="alert" 
+          logo="error" 
           color="red" 
           onViewDetails={() => onFilter({ field: "status", value: "Out of Stock" })}
         />
       </div>
       
-      <div className="grid grid-cols-1 gap-5">
-        <StockDistributionChart />
-      </div>
+      <StockDistributionChart />
     </div>
   )
 } 
