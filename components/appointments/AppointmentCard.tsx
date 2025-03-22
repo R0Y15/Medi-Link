@@ -32,16 +32,23 @@ export function AppointmentCard({
   onCancel,
   onViewDetails
 }: AppointmentCardProps) {
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
+  // Get a variant name based on status
+  const getStatusVariant = (status: string): "default" | "outline" | "secondary" | "destructive" | "success" | "warning" => {
+    // Normalize the status by trimming whitespace and converting to lowercase
+    const normalizedStatus = status.trim().toLowerCase();
+    
+    switch (normalizedStatus) {
       case 'upcoming':
-        return 'bg-blue-500/10 text-blue-500 hover:bg-blue-500/20';
+        return 'default'; // Blue is the default variant (primary color)
+      case 'scheduled':
+        return 'warning'; // Yellow variant
       case 'completed':
-        return 'bg-green-500/10 text-green-500 hover:bg-green-500/20';
+        return 'success'; // Green variant
       case 'cancelled':
-        return 'bg-red-500/10 text-red-500 hover:bg-red-500/20';
+      case 'canceled':
+        return 'destructive'; // Red variant
       default:
-        return 'bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20';
+        return 'secondary';
     }
   };
 
@@ -59,9 +66,7 @@ export function AppointmentCard({
               <Clock className="h-4 w-4" />
               <span>{appointment.startTime} - {appointment.endTime}</span>
             </div>
-            <Badge 
-              className={`border-0 ${getStatusColor(appointment.status)}`}
-            >
+            <Badge variant={getStatusVariant(appointment.status)}>
               {appointment.status}
             </Badge>
           </div>
