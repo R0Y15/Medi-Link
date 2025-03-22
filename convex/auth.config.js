@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: "https://clerk.medi-link.com",
+      domain: "giving-ringtail-23.clerk.accounts.dev",
       applicationID: "convex",
     },
   ]

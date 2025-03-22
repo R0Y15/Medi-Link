@@ -290,10 +290,10 @@ export default function BloodBankPage() {
                           <CardContent className="p-3">
                             <div className="flex justify-between items-start mb-2">
                               <div>
-                                <h3 className="font-medium text-base">{bank.name}</h3>
+                                <h3 className="font-medium text-base leading-tight">{bank.name}</h3>
                                 <p className="text-xs text-muted-foreground mt-1">{bank.address}</p>
                               </div>
-                              <div className={`text-xs px-2 py-1 rounded-full ${bank.open 
+                              <div className={`text-xs font-medium px-2 py-1 rounded-full ${bank.open 
                                 ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400' 
                                 : 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'}`}>
                                 {bank.open ? 'Open' : 'Closed'}
@@ -406,7 +406,7 @@ export default function BloodBankPage() {
                   Request or donate blood through this quick form
                 </CardDescription>
               </CardHeader>
-              <CardContent className="px-4 pb-4">
+              <CardContent className="px-4 pb-4 mt-4">
                 <EnquiryForm />
               </CardContent>
             </Card>
