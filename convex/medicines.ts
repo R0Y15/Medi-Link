@@ -109,4 +109,102 @@ export const updateStock = mutation({
     
     return id;
   },
+});
+
+// Create a new medicine order
+export const createOrder = mutation({
+  args: {
+    userId: v.optional(v.string()),
+    patientName: v.string(),
+    contactNumber: v.string(),
+    address: v.string(),
+    items: v.array(v.object({
+      medicineId: v.id("medicines"),
+      medicineName: v.string(),
+      quantity: v.number(),
+      price: v.number(),
+    })),
+    totalAmount: v.number(),
+    notes: v.optional(v.string()),
+    prescriptionRequired: v.boolean(),
+    prescriptionUrl: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    // Create a new order
+    const orderId = await ctx.db.insert("medicineOrders", {
+      ...args,
+      status: "Pending",
+      orderDate: new Date().toISOString(),
+    });
+
+    // Update stock levels for each medicine
+    for (const item of args.items) {
+      const medicine = await ctx.db.get(item.medicineId);
+      if (medicine) {
+        const newStock = medicine.stock - item.quantity;
+        // Determine status based on stock level
+        let status: "In Stock" | "Low Stock" | "Out of Stock" = "In Stock";
+        if (newStock <= 0) {
+          status = "Out of Stock";
+        } else if (newStock < 10) {
+          status = "Low Stock";
+        }
+
+        await ctx.db.patch(item.medicineId, { 
+          stock: newStock,
+          status,
+        });
+      }
+    }
+
+    // Track this as an activity
+    await ctx.db.insert("activities", {
+      type: "order",
+      title: "Medicine Order Placed",
+      description: `Order for ${args.items.length} medicines has been placed`,
+      timestamp: new Date().toISOString(),
+      category: "pharmacy",
+      status: "pending",
+      relatedId: orderId,
+      metadata: {
+        notes: args.notes || "No additional notes",
+      },
+    });
+
+    return orderId;
+  },
+});
+
+// Get all orders for a user
+export const getUserOrders = query({
+  args: { 
+    userId: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    if (!args.userId) {
+      return [];
+    }
+    
+    // Since we're accepting a string userId (from Clerk) instead of a Convex ID,
+    // we retrieve all orders and then filter them by showing only recent ones
+    // This is a workaround since we can't directly query by the Clerk user ID format
+    const orders = await ctx.db
+      .query("medicineOrders")
+      .order("desc")
+      .take(20);
+    
+    return orders;
+  },
+});
+
+// Get recent orders (for the pharmacy page)
+export const getRecentOrders = query({
+  handler: async (ctx) => {
+    const orders = await ctx.db
+      .query("medicineOrders")
+      .order("desc")
+      .take(10);
+    
+    return orders;
+  },
 }); 

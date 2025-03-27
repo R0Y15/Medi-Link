@@ -49,6 +49,32 @@ export default defineSchema({
     stock: v.number(),
   }),
 
+  medicineOrders: defineTable({
+    userId: v.optional(v.string()),
+    patientName: v.string(),
+    contactNumber: v.string(),
+    address: v.string(),
+    items: v.array(v.object({
+      medicineId: v.id("medicines"),
+      medicineName: v.string(),
+      quantity: v.number(),
+      price: v.number(),
+    })),
+    totalAmount: v.number(),
+    status: v.union(
+      v.literal("Pending"), 
+      v.literal("Processing"), 
+      v.literal("Shipped"), 
+      v.literal("Delivered"), 
+      v.literal("Cancelled")
+    ),
+    orderDate: v.string(),
+    deliveryDate: v.optional(v.string()),
+    notes: v.optional(v.string()),
+    prescriptionRequired: v.boolean(),
+    prescriptionUrl: v.optional(v.string()),
+  }).index("by_orderDate", ["orderDate"]),
+
   reports: defineTable({
     title: v.string(),
     type: v.string(),
