@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="50px" viewBox="0 0 40 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Ambulance Marker</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M20,0 C31.0457,0 40,8.9543 40,20 C40,31.0457 31.0457,40 20,40 C15.8579,40 12.0149,38.6322 8.87516,36.345 L0,50 L0,50 L9.39743,36.5183 C3.71584,32.7205 0,26.7132 0,20 C0,8.9543 8.9543,0 20,0 Z" fill="#34D399" fill-rule="nonzero"></path>
+        <g transform="translate(8.000000, 12.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M22,2 L20,2 C20,0.89 19.1,0 18,0 L8,0 C6.89,0 6,0.89 6,2 L4,2 C2.89,2 2,2.89 2,4 L2,14 C2,15.11 2.89,16 4,16 L6,16 C6,17.11 6.89,18 8,18 L18,18 C19.11,18 20,17.11 20,16 L22,16 C23.11,16 24,15.11 24,14 L24,4 C24,2.89 23.11,2 22,2 Z M7,13 L5,13 L5,11 L7,11 L7,13 Z M7,9 L5,9 L5,7 L7,7 L7,9 Z M10,9 L8,9 L8,7 L10,7 L10,9 Z M10,5 L8,5 L8,3 L10,3 L10,5 Z M13,9 L11,9 L11,7 L13,7 L13,9 Z M13,5 L11,5 L11,3 L13,3 L13,5 Z M19,13 L17,13 L17,11 L19,11 L19,13 Z M19,9 L17,9 L17,7 L19,7 L19,9 Z"></path>
+        </g>
+    </g>
+</svg> 

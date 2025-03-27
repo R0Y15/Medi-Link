@@ -243,10 +243,10 @@ export default function BloodBankPage() {
           <CardHeader className="pb-2 px-4 pt-4">
             <div className="flex justify-between items-center">
               <CardTitle className="text-xl">Blood Banks Map</CardTitle>
-              <Button 
-                size="sm" 
-                variant="outline" 
+              <Button
                 onClick={getUserLocation}
+                size="sm"
+                variant="default"
                 disabled={isLoadingLocation}
               >
                 <Locate className="h-4 w-4 mr-2" />
@@ -254,7 +254,7 @@ export default function BloodBankPage() {
               </Button>
             </div>
             <CardDescription className="text-sm mt-2">
-              View blood banks and hospitals on the map
+              View blood banks on the map
             </CardDescription>
           </CardHeader>
           <CardContent className="p-0 h-[450px] md:h-[500px]">
